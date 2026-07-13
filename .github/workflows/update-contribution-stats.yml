@@ -1,0 +1,47 @@
+name: Atualizar estatísticas de contribuições
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "tools/update_contribution_stats.py"
+      - ".github/workflows/update-contribution-stats.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: contribution-stats
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+
+      - name: Gerar estatísticas locais
+        env:
+          GITHUB_LOGIN: nan733
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 tools/update_contribution_stats.py
+
+      - name: Publicar somente quando houver mudanças
+        shell: bash
+        run: |
+          if [[ -z "$(git status --porcelain -- README.md assets)" ]]; then
+            echo "As estatísticas já estão atualizadas."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- README.md assets
+          git commit -m "Atualizar estatísticas de contribuições"
+          git push

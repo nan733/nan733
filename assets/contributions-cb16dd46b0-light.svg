@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="330" viewBox="0 0 1180 330" role="img" aria-labelledby="title desc">
+<title id="title">Estatísticas de contribuições de nan733</title>
+<desc id="desc">120 contribuições, sequência atual de 6 dias e maior sequência de 6 dias.</desc>
+<defs>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#0891B2"/><stop offset="0.52" stop-color="#2563EB"/><stop offset="1" stop-color="#7C3AED"/></linearGradient>
+  <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="#DCE7F1" opacity="0.42"/></pattern>
+  <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1180" height="330" rx="14" fill="#F7FAFC"/>
+<rect width="1180" height="330" rx="14" fill="url(#grid)"/>
+<rect x="3" y="3" width="1174" height="324" rx="12" fill="none" stroke="url(#accent)" stroke-width="2"/>
+<path d="M24 43H1156" stroke="#DCE7F1"/>
+<text x="24" y="29" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="800" fill="#0891B2">CONTRIBUIÇÕES.LOG // NAN733</text>
+<text x="1156" y="29" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#64748B">API OFICIAL // ÚLTIMA ATIVIDADE 13 JUL 2026</text>
+
+<rect x="24" y="62" width="360" height="190" rx="8" fill="#FFFFFF" stroke="#DCE7F1"/>
+<rect x="24" y="62" width="360" height="3" rx="2" fill="#0891B2"/>
+<text x="43" y="91" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="800" fill="#0891B2">01 // TOTAL.DE.CONTRIBUIÇÕES</text>
+<text x="43" y="158" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="54" font-weight="800" fill="#172033">120</text>
+<text x="43" y="184" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#64748B">CONTRIBUIÇÕES REGISTRADAS</text>
+<path d="M43 206H348" stroke="#DCE7F1"/>
+<text x="43" y="229" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#64748B">CONTA DESDE // 11 JUN 2025</text>
+<circle cx="333" cy="146" r="28" fill="none" stroke="#0891B2" opacity="0.18"/>
+<circle cx="333" cy="146" r="5" fill="#0891B2" filter="url(#glow)"><animate attributeName="opacity" values="0.45;1;0.45" dur="2.6s" repeatCount="indefinite"/></circle>
+
+<rect x="410" y="62" width="360" height="190" rx="8" fill="#FFFFFF" stroke="#DCE7F1"/>
+<rect x="410" y="62" width="360" height="3" rx="2" fill="#0F766E"/>
+<text x="429" y="91" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="800" fill="#0891B2">02 // SEQUÊNCIA.ATUAL</text>
+<text x="429" y="158" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="54" font-weight="800" fill="#172033">6</text>
+<text x="429" y="184" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#64748B">DIAS CONSECUTIVOS</text>
+<path d="M429 206H734" stroke="#DCE7F1"/>
+<text x="429" y="229" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#64748B">08 - 13 JUL 2026</text>
+<circle cx="719" cy="146" r="28" fill="none" stroke="#0F766E" opacity="0.18"/>
+<circle cx="719" cy="146" r="5" fill="#0F766E" filter="url(#glow)"><animate attributeName="r" values="4;7;4" dur="2.4s" repeatCount="indefinite"/></circle>
+
+<rect x="796" y="62" width="360" height="190" rx="8" fill="#FFFFFF" stroke="#DCE7F1"/>
+<rect x="796" y="62" width="360" height="3" rx="2" fill="#7C3AED"/>
+<text x="815" y="91" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="800" fill="#0891B2">03 // MAIOR.SEQUÊNCIA</text>
+<text x="815" y="158" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="54" font-weight="800" fill="#172033">6</text>
+<text x="815" y="184" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#64748B">DIAS CONSECUTIVOS</text>
+<path d="M815 206H1120" stroke="#DCE7F1"/>
+<text x="815" y="229" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#64748B">08 - 13 JUL 2026</text>
+<circle cx="1105" cy="146" r="28" fill="none" stroke="#7C3AED" opacity="0.18"/>
+<path d="M1097 146L1103 152L1114 139" fill="none" stroke="#7C3AED" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+<rect x="24" y="270" width="1132" height="42" rx="8" fill="#EDF5FB" stroke="#DCE7F1"/>
+<text x="43" y="296" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="800" fill="#0891B2">ATIVIDADE.RECENTE // 48 DIAS</text>
+<rect x="370" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="386" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="402" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="418" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="434" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="450" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="466" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="482" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="498" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="514" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="530" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="546" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="562" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="578" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="594" y="286" width="11" height="11" rx="2" fill="#2563EB" opacity="1"/><rect x="610" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="626" y="286" width="11" height="11" rx="2" fill="#2563EB" opacity="1"/><rect x="642" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="658" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="674" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="690" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="706" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="722" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="738" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="754" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="770" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="786" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="802" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="818" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="834" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="850" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="866" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="882" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="898" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="914" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="930" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="946" y="286" width="11" height="11" rx="2" fill="#0F766E" opacity="1"/><rect x="962" y="286" width="11" height="11" rx="2" fill="#7C3AED" opacity="1"/><rect x="978" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="994" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="1010" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="1026" y="286" width="11" height="11" rx="2" fill="#DCE7F1" opacity="0.58"/><rect x="1042" y="286" width="11" height="11" rx="2" fill="#2563EB" opacity="1"/><rect x="1058" y="286" width="11" height="11" rx="2" fill="#0F766E" opacity="1"/><rect x="1074" y="286" width="11" height="11" rx="2" fill="#0F766E" opacity="1"/><rect x="1090" y="286" width="11" height="11" rx="2" fill="#7C3AED" opacity="1"/><rect x="1106" y="286" width="11" height="11" rx="2" fill="#7C3AED" opacity="1"/><rect x="1122" y="286" width="11" height="11" rx="2" fill="#7C3AED" opacity="1"/>
+</svg>

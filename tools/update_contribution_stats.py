@@ -24,7 +24,7 @@ STATE = ASSETS / "contribution-stats.json"
 API_URL = "https://api.github.com/graphql"
 README_START = "<!-- contribution-stats:start -->"
 README_END = "<!-- contribution-stats:end -->"
-LAYOUT_VERSION = 7
+LAYOUT_VERSION = 8
 
 try:
     PROFILE_TIMEZONE = ZoneInfo("America/Sao_Paulo")
@@ -48,28 +48,28 @@ MONTHS = (
 
 THEMES = {
     "dark": {
-        "bg": "#050D09",
-        "panel": "#081A12",
-        "panel_alt": "#0E2419",
-        "grid": "#173A2A",
-        "ink": "#E7F4EC",
-        "muted": "#8AA596",
-        "cyan": "#2DD49A",
-        "blue": "#58D6A4",
-        "green": "#8BE0B8",
-        "violet": "#D1AA68",
+        "bg": "#010403",
+        "panel": "#030C08",
+        "panel_alt": "#06150E",
+        "grid": "#0C291B",
+        "ink": "#DDEBE3",
+        "muted": "#728D7E",
+        "cyan": "#20B978",
+        "blue": "#13734D",
+        "green": "#4BC98F",
+        "deep": "#2E7D57",
     },
     "light": {
-        "bg": "#F2F7F4",
-        "panel": "#FFFFFF",
-        "panel_alt": "#E7F2EC",
-        "grid": "#D4E5DB",
-        "ink": "#173026",
-        "muted": "#61786B",
-        "cyan": "#0A7F55",
-        "blue": "#15966A",
-        "green": "#2E7D5A",
-        "violet": "#8C652F",
+        "bg": "#030806",
+        "panel": "#06110B",
+        "panel_alt": "#0A1A12",
+        "grid": "#113020",
+        "ink": "#E3F0E9",
+        "muted": "#7F9A8C",
+        "cyan": "#24B77C",
+        "blue": "#187A53",
+        "green": "#52C994",
+        "deep": "#357C5A",
     },
 }
 
@@ -399,7 +399,7 @@ def stats_svg(stats: ContributionStats, theme: dict[str, str]) -> str:
     label = f'{mono} font-size="15" font-weight="800" fill="{theme["cyan"]}"'
     muted = f'{mono} font-size="13" font-weight="600" fill="{theme["muted"]}"'
     total_number = f'{mono} font-size="70" font-weight="800" fill="{theme["blue"]}"'
-    longest_number = f'{mono} font-size="70" font-weight="800" fill="{theme["violet"]}"'
+    longest_number = f'{mono} font-size="70" font-weight="800" fill="{theme["deep"]}"'
 
     total = html.escape(format_number(stats.total))
     current = html.escape(format_number(stats.current.count))
@@ -422,7 +422,7 @@ def stats_svg(stats: ContributionStats, theme: dict[str, str]) -> str:
 <title id="title">Estatísticas de contribuições de {login}</title>
 <desc id="desc">{description}</desc>
 <defs>
-  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="{theme['cyan']}"/><stop offset="0.52" stop-color="{theme['blue']}"/><stop offset="1" stop-color="{theme['violet']}"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="{theme['cyan']}"/><stop offset="0.52" stop-color="{theme['blue']}"/><stop offset="1" stop-color="{theme['deep']}"/></linearGradient>
   <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="{theme['grid']}" opacity="0.42"/></pattern>
   <radialGradient id="centerGlow" cx="50%" cy="40%" r="52%"><stop offset="0" stop-color="{theme['cyan']}" stop-opacity="0.13"/><stop offset="1" stop-color="{theme['bg']}" stop-opacity="0"/></radialGradient>
   <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
@@ -457,7 +457,7 @@ def stats_svg(stats: ContributionStats, theme: dict[str, str]) -> str:
   <text x="967" y="171" {longest_number}>{longest}</text>
   <text x="967" y="202" {mono} font-size="17" font-weight="800" fill="{theme['ink']}">MAIOR SEQUÊNCIA</text>
   <text x="967" y="235" {muted}>{longest_range}</text>
-  <path d="M869 256H1065" stroke="{theme['violet']}" stroke-width="2" opacity="0.55"/>
+  <path d="M869 256H1065" stroke="{theme['deep']}" stroke-width="2" opacity="0.55"/>
 </g>
 
 <circle cx="24" cy="307" r="4" fill="{theme['green']}" filter="url(#glow)"><animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" repeatCount="indefinite"/></circle>

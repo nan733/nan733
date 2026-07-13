@@ -3,34 +3,34 @@
 <desc id="desc">Cabeçalho animado com ondas fluidas, o nome Renan Oliveira e sua área de atuação.</desc>
 <defs>
   <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#0A7F55"><animate attributeName="stop-color" values="#0A7F55;#15966A;#0A7F55" dur="8s" repeatCount="indefinite"/></stop>
-    <stop offset="0.52" stop-color="#15966A"><animate attributeName="stop-color" values="#15966A;#8C652F;#15966A" dur="8s" repeatCount="indefinite"/></stop>
-    <stop offset="1" stop-color="#8C652F"><animate attributeName="stop-color" values="#8C652F;#2E7D5A;#8C652F" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="0" stop-color="#24B77C"><animate attributeName="stop-color" values="#24B77C;#187A53;#24B77C" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="0.52" stop-color="#187A53"><animate attributeName="stop-color" values="#187A53;#357C5A;#187A53" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="1" stop-color="#357C5A"><animate attributeName="stop-color" values="#357C5A;#52C994;#357C5A" dur="8s" repeatCount="indefinite"/></stop>
   </linearGradient>
   <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#0A7F55" stop-opacity="0.38"><animate attributeName="stop-color" values="#0A7F55;#15966A;#0A7F55" dur="11s" repeatCount="indefinite"/></stop>
-    <stop offset="0.5" stop-color="#15966A" stop-opacity="0.26"><animate attributeName="stop-color" values="#15966A;#8C652F;#15966A" dur="11s" repeatCount="indefinite"/></stop>
-    <stop offset="1" stop-color="#8C652F" stop-opacity="0.42"><animate attributeName="stop-color" values="#8C652F;#2E7D5A;#8C652F" dur="11s" repeatCount="indefinite"/></stop>
+    <stop offset="0" stop-color="#24B77C" stop-opacity="0.38"><animate attributeName="stop-color" values="#24B77C;#187A53;#24B77C" dur="11s" repeatCount="indefinite"/></stop>
+    <stop offset="0.5" stop-color="#187A53" stop-opacity="0.26"><animate attributeName="stop-color" values="#187A53;#357C5A;#187A53" dur="11s" repeatCount="indefinite"/></stop>
+    <stop offset="1" stop-color="#357C5A" stop-opacity="0.42"><animate attributeName="stop-color" values="#357C5A;#52C994;#357C5A" dur="11s" repeatCount="indefinite"/></stop>
   </linearGradient>
   <linearGradient id="name" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="#173026"/>
-    <stop offset="0.48" stop-color="#173026"/>
-    <stop offset="0.58" stop-color="#0A7F55"><animate attributeName="stop-color" values="#0A7F55;#15966A;#8C652F;#0A7F55" dur="10s" repeatCount="indefinite"/></stop>
-    <stop offset="1" stop-color="#15966A"><animate attributeName="stop-color" values="#15966A;#8C652F;#0A7F55;#15966A" dur="10s" repeatCount="indefinite"/></stop>
+    <stop offset="0" stop-color="#E3F0E9"/>
+    <stop offset="0.48" stop-color="#E3F0E9"/>
+    <stop offset="0.58" stop-color="#24B77C"><animate attributeName="stop-color" values="#24B77C;#187A53;#357C5A;#24B77C" dur="10s" repeatCount="indefinite"/></stop>
+    <stop offset="1" stop-color="#187A53"><animate attributeName="stop-color" values="#187A53;#357C5A;#24B77C;#187A53" dur="10s" repeatCount="indefinite"/></stop>
   </linearGradient>
   <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
-    <path d="M24 0H0V24" fill="none" stroke="#D4E5DB" stroke-width="1" opacity="0.48"/>
+    <path d="M24 0H0V24" fill="none" stroke="#113020" stroke-width="1" opacity="0.48"/>
   </pattern>
   <clipPath id="frameClip"><rect width="1180" height="230" rx="14"/></clipPath>
 </defs>
 <g clip-path="url(#frameClip)">
-  <rect width="1180" height="230" fill="#F2F7F4"/>
+  <rect width="1180" height="230" fill="#030806"/>
   <rect width="1180" height="230" fill="url(#grid)"/>
   <path id="backWave" d="M0 183C220 164 420 162 620 171C820 180 1000 177 1180 164V230H0Z" fill="url(#wave)" opacity="0.78">
     <animate attributeName="d" values="M0 183C220 164 420 162 620 171C820 180 1000 177 1180 164V230H0Z;M0 174C220 182 420 174 620 164C820 154 1000 162 1180 179V230H0Z;M0 183C220 164 420 162 620 171C820 180 1000 177 1180 164V230H0Z" dur="13s" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" repeatCount="indefinite"/>
     <animate attributeName="opacity" values="0.66;0.84;0.66" dur="13s" repeatCount="indefinite"/>
   </path>
-  <path id="frontWave" d="M0 204C230 188 426 184 618 191C820 198 1008 201 1180 188V230H0Z" fill="#FFFFFF" fill-opacity="0.9">
+  <path id="frontWave" d="M0 204C230 188 426 184 618 191C820 198 1008 201 1180 188V230H0Z" fill="#06110B" fill-opacity="0.9">
     <animate attributeName="d" values="M0 204C230 188 426 184 618 191C820 198 1008 201 1180 188V230H0Z;M0 193C224 201 426 198 620 188C818 178 1006 184 1180 202V230H0Z;M0 204C230 188 426 184 618 191C820 198 1008 201 1180 188V230H0Z" dur="16s" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" repeatCount="indefinite"/>
   </path>
   <path id="waveLine" d="M0 183C220 164 420 162 620 171C820 180 1000 177 1180 164" fill="none" stroke="url(#accent)" stroke-width="2.5" opacity="0.94">
@@ -40,7 +40,7 @@
 <rect x="3" y="3" width="1174" height="224" rx="12" fill="none" stroke="url(#accent)" stroke-width="2"/>
 <g text-anchor="middle">
   <text x="590" y="72" font-family="Inter, Segoe UI, Arial, sans-serif" letter-spacing="0" font-size="58" font-weight="800" fill="url(#name)">Renan Oliveira</text>
-  <text x="590" y="114" font-family="Inter, Segoe UI, Arial, sans-serif" letter-spacing="0" font-size="25" font-weight="700" fill="#173026">Desenvolvedor Full-Stack em Formação</text>
-  <text x="590" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="16" font-weight="700" fill="#0A7F55">INTERFACES WEB / APIs / DADOS / AUTOMAÇÃO</text>
+  <text x="590" y="114" font-family="Inter, Segoe UI, Arial, sans-serif" letter-spacing="0" font-size="25" font-weight="700" fill="#E3F0E9">Desenvolvedor Full-Stack em Formação</text>
+  <text x="590" y="146" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="16" font-weight="700" fill="#24B77C">INTERFACES WEB / APIs / DADOS / AUTOMAÇÃO</text>
 </g>
 </svg>

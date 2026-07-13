@@ -6,83 +6,68 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "assets"
 
 ASCII_ART = r"""
-                                                             
-                             =*##%%#####.-                  
-                            +++*#####*****:                 
-                            =+##########*=                  
-                           -=-   .==-   :=-                 
-                         #.=-:   .-*.    -=:                
-                        :-=*#=--=:##=-:-==+-=               
-                         -==###+=#####=====:-               
-                         ##===-.=  - .--===-=               
-                           ===-:  ===  ===                  
-                           ====--=---=--=-                  
-                           =.-= *-:.:. -=                   
-                         #===:.--     -=                    
-                     %%%%##==--::-----==#                   
-                  %%%%%%%%%====---===-=-*#%                 
-               %%%%%%%%%%%%%##=--=-=----*###%%%             
-            =%%%%%%%%%%%%%%%%##**#####****###%%%%           
-           %%%%%%%%%%%%%%%%%%%#*++++++++**####%%%%          
-         %%%%%%%%%%%%%%%%%%%%%#+++++++++***#####%%%         
-        %%%%%%%%%%%%%%%%%%%%%%%#*++++++*****######%%        
-       %%%%%%%%%%%%%%%%%%%%%%%%%#*+++++******###%*#*        
-      #%%#%%%%%%#%%%%%%%%%%%%%%%%+=--=- =.--*##%%+#*        
-      %##%#+#%#%%##%#%%%%%%%%%%%%%+======++==##%%#++        
-     %%###*##+*#%#%#=##%%%%%%%%%%%%++*+++***###%%%+*        
-     %###++++#*++##*=+**#%%%%%%%%%%#***+*****##%%%+#        
-     ####++==#**+==*=+++*#%%%%%%%%%%***++*****####**        
-    #++%#*+==+*+++=*==++*##%%%%%%%##***++*****#**#+##      
-   ##+#%##++==*==+=*==++++#%%%#####*****++*+++*#**+##      
-   **+###%*+===*===+=+++++++##*###**#****+**++*#*=*#%+     
-  **+##%###*+==+++.=+++++++****###**##****+#*++**=+##      
- %#*++######+++++=====+++++##*+##***##*#+**##+**==+#%%     
- %*%#%#%###%*+++++-====+++***+*#**++##***+*###**#=+= =     
-%##%##%*%%###++++=-======+***+###*++##***++*##**+   .==    
-      %%%%%%%++++:======++*+++###*+*###**+**###**   ===:   
-      ::   .+##*=======++**++*###*++###*****###**   =---   
-      =====     :.:====+*++++##*#+++###****+#****   -::    
-      ======      -====+++=++##**+++###*+**+*##++   ::     
-      -==+++=    :-===+++++++%##++++####++****#**    .     
-     .:===+++=  .:--=++=++++###*++++####*+***+#*+          
-     =.-======.  ..=====++**%##*++++*###*+***##*+     ...  
-       .-=-====   =====++**%%##*++++####**+**##*+-    .-:  
-     -  ..:---=  ======++*%%#**+++++#**#**+***#*+=.   .--: 
-     :    ..:---:=-====+#%%%#**+++++***##******#*=-   .-=- 
-     :    .::---.:-==+#%%%%#+*+++++************##===   -=-.
-           ----:..-==%%%%%%**++++*********+*****#+:-:  -== 
-      #   .-===-.:=+%%%%%%#*++=++*+*************##+  ..====
-          .=====.:=%%%%%%#++++++**+**+++*********#+ -       
-           -====.=%%##%%%++++==++++*+++++*******##*         
+                                       .: -
+                                .::::.
+                            .-*********==-::.
+                           -**+****####******=.
+                          :*++***######****++=*:
+                          ********#######***+=--=
+                         .*=---==++*##%#++===**:.
+                         ===*******#%##*===-:..:
+                         *+***#*+**###*++*****:..
+                       ..*+=----++**#+=+=++****..
+                      +*=**++++******==+++:::.-*
+                      +*++*######**##+=+*****==*.*
+                      -*+**#####**###*+=*##**+=-:*
+                      :*+**#####++*#*===+###**+-::
+                       +=+*###***++====+**##**=:-
+                        .***#+-==++**+===-***+-..
+                         =**#*+=+*##*+=--+**+*.
+                         .+**##**+++++++***+=:
+                         .+=+**##*+++***+==-:.
+                         .*==+***#****+*=--::-
+                         :+*+==+*###***=-::-+*.
+                      -*#==+*+========-::-=*+=:*+-:
+                   -*%@@%+=+**+++==-----=**+==-#%@%#+:
+               .=#%@@%%@@#=+***+++**+===++++=-*%%%%%%%%+:
+            .-*%%%%%%%@@@@#++***++++++++*++++#%@@%%%%%%%%#+:
+         .=*%%%%%%%%%@@@@@@%#***++*++++++++*%@@@%%%%%%%%%%%%#+:.
+     .=*#%%%%%%%%%%%%@@@@@@@@%##**+++****#%@@@%%%%%%%%%%%%%#%%%%#=
+    -%@%%%%%%%%%%%%%%%%%@@@@@@@@@@%%%%@@@@@@@%%%%%%%%%%%%%%%%%##%#*.
+  .*@%%%%%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@%%%%%%%%%%%%%%%%%%%%%%#%%+.
+ .%%%%%%%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@%%%%%%%%%%%%%%%%%%%%%%%%%%%%#=
+:%%%%%%%%@%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@%%%%%%%%%%%%%%%%%%%%%%%%%%%###*
+#%%%%%%%%%@%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@%%%%%%%%%%%%%%%%%%%%%%%%%%####
+%%%%%%%%%%%%@%%%%%@@@@@@@@@@@@@@@@@@@@@@%%%%%%%%%%%%%%%%%%%%%%%%%%%#%###
 """.strip("\n").splitlines()
 
 
 THEMES = {
     "dark": {
-        "bg": "#050D09",
-        "panel": "#081A12",
-        "panel_alt": "#0E2419",
-        "ink": "#E7F4EC",
-        "muted": "#8AA596",
-        "grid": "#173A2A",
-        "cyan": "#2DD49A",
-        "green": "#8BE0B8",
-        "blue": "#58D6A4",
-        "violet": "#D1AA68",
-        "shadow": "#010604",
+        "bg": "#010403",
+        "panel": "#030C08",
+        "panel_alt": "#06150E",
+        "ink": "#DDEBE3",
+        "muted": "#728D7E",
+        "grid": "#0C291B",
+        "cyan": "#20B978",
+        "green": "#4BC98F",
+        "blue": "#13734D",
+        "deep": "#2E7D57",
+        "shadow": "#000000",
     },
     "light": {
-        "bg": "#F2F7F4",
-        "panel": "#FFFFFF",
-        "panel_alt": "#E7F2EC",
-        "ink": "#173026",
-        "muted": "#61786B",
-        "grid": "#D4E5DB",
-        "cyan": "#0A7F55",
-        "green": "#2E7D5A",
-        "blue": "#15966A",
-        "violet": "#8C652F",
-        "shadow": "#7C9487",
+        "bg": "#030806",
+        "panel": "#06110B",
+        "panel_alt": "#0A1A12",
+        "ink": "#E3F0E9",
+        "muted": "#7F9A8C",
+        "grid": "#113020",
+        "cyan": "#24B77C",
+        "green": "#52C994",
+        "blue": "#187A53",
+        "deep": "#357C5A",
+        "shadow": "#000000",
     },
 }
 
@@ -90,9 +75,9 @@ THEMES = {
 def ascii_tspans() -> str:
     rows = []
     for index, line in enumerate(ASCII_ART):
-        y = 103 + index * 9.2
+        y = 112 + index * 10.25
         rows.append(
-            f'<tspan x="42" y="{y:.1f}" xml:space="preserve">{escape(line)}</tspan>'
+            f'<tspan x="55" y="{y:.1f}" xml:space="preserve">{escape(line)}</tspan>'
         )
     return "\n".join(rows)
 
@@ -106,19 +91,19 @@ def header_svg(theme: dict[str, str]) -> str:
 <defs>
   <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="{theme['cyan']}"><animate attributeName="stop-color" values="{theme['cyan']};{theme['blue']};{theme['cyan']}" dur="8s" repeatCount="indefinite"/></stop>
-    <stop offset="0.52" stop-color="{theme['blue']}"><animate attributeName="stop-color" values="{theme['blue']};{theme['violet']};{theme['blue']}" dur="8s" repeatCount="indefinite"/></stop>
-    <stop offset="1" stop-color="{theme['violet']}"><animate attributeName="stop-color" values="{theme['violet']};{theme['green']};{theme['violet']}" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="0.52" stop-color="{theme['blue']}"><animate attributeName="stop-color" values="{theme['blue']};{theme['deep']};{theme['blue']}" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="1" stop-color="{theme['deep']}"><animate attributeName="stop-color" values="{theme['deep']};{theme['green']};{theme['deep']}" dur="8s" repeatCount="indefinite"/></stop>
   </linearGradient>
   <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="{theme['cyan']}" stop-opacity="0.38"><animate attributeName="stop-color" values="{theme['cyan']};{theme['blue']};{theme['cyan']}" dur="11s" repeatCount="indefinite"/></stop>
-    <stop offset="0.5" stop-color="{theme['blue']}" stop-opacity="0.26"><animate attributeName="stop-color" values="{theme['blue']};{theme['violet']};{theme['blue']}" dur="11s" repeatCount="indefinite"/></stop>
-    <stop offset="1" stop-color="{theme['violet']}" stop-opacity="0.42"><animate attributeName="stop-color" values="{theme['violet']};{theme['green']};{theme['violet']}" dur="11s" repeatCount="indefinite"/></stop>
+    <stop offset="0.5" stop-color="{theme['blue']}" stop-opacity="0.26"><animate attributeName="stop-color" values="{theme['blue']};{theme['deep']};{theme['blue']}" dur="11s" repeatCount="indefinite"/></stop>
+    <stop offset="1" stop-color="{theme['deep']}" stop-opacity="0.42"><animate attributeName="stop-color" values="{theme['deep']};{theme['green']};{theme['deep']}" dur="11s" repeatCount="indefinite"/></stop>
   </linearGradient>
   <linearGradient id="name" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="{theme['ink']}"/>
     <stop offset="0.48" stop-color="{theme['ink']}"/>
-    <stop offset="0.58" stop-color="{theme['cyan']}"><animate attributeName="stop-color" values="{theme['cyan']};{theme['blue']};{theme['violet']};{theme['cyan']}" dur="10s" repeatCount="indefinite"/></stop>
-    <stop offset="1" stop-color="{theme['blue']}"><animate attributeName="stop-color" values="{theme['blue']};{theme['violet']};{theme['cyan']};{theme['blue']}" dur="10s" repeatCount="indefinite"/></stop>
+    <stop offset="0.58" stop-color="{theme['cyan']}"><animate attributeName="stop-color" values="{theme['cyan']};{theme['blue']};{theme['deep']};{theme['cyan']}" dur="10s" repeatCount="indefinite"/></stop>
+    <stop offset="1" stop-color="{theme['blue']}"><animate attributeName="stop-color" values="{theme['blue']};{theme['deep']};{theme['cyan']};{theme['blue']}" dur="10s" repeatCount="indefinite"/></stop>
   </linearGradient>
   <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
     <path d="M24 0H0V24" fill="none" stroke="{theme['grid']}" stroke-width="1" opacity="0.48"/>
@@ -154,24 +139,24 @@ def hero_svg(theme: dict[str, str]) -> str:
     label = f'{mono} font-size="14" font-weight="700" fill="{theme["cyan"]}"'
     key = f'{mono} font-size="14" font-weight="700" fill="{theme["muted"]}"'
     value = f'{mono} font-size="15" font-weight="600" fill="{theme["ink"]}"'
-    portrait = 'font-family="Consolas, Courier New, monospace" font-size="7.6" fill="url(#portrait)"'
+    portrait = 'font-family="Consolas, Courier New, monospace" font-size="8.2" fill="url(#portrait)"'
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="620" viewBox="0 0 1180 620" role="img" aria-labelledby="title desc">
 <title id="title">Painel de perfil do desenvolvedor nan733</title>
 <desc id="desc">Interface de terminal animada com retrato ASCII, stack de desenvolvimento e foco profissional.</desc>
 <defs>
   <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1">
-    <stop offset="0" stop-color="{theme['violet']}"><animate attributeName="stop-color" values="{theme['violet']};{theme['cyan']};{theme['green']};{theme['violet']}" dur="10s" repeatCount="indefinite"/></stop>
+    <stop offset="0" stop-color="{theme['deep']}"><animate attributeName="stop-color" values="{theme['deep']};{theme['cyan']};{theme['green']};{theme['deep']}" dur="10s" repeatCount="indefinite"/></stop>
     <stop offset="0.52" stop-color="{theme['cyan']}"><animate attributeName="stop-color" values="{theme['cyan']};{theme['green']};{theme['blue']};{theme['cyan']}" dur="10s" repeatCount="indefinite"/></stop>
-    <stop offset="1" stop-color="{theme['green']}"><animate attributeName="stop-color" values="{theme['green']};{theme['blue']};{theme['violet']};{theme['green']}" dur="10s" repeatCount="indefinite"/></stop>
+    <stop offset="1" stop-color="{theme['green']}"><animate attributeName="stop-color" values="{theme['green']};{theme['blue']};{theme['deep']};{theme['green']}" dur="10s" repeatCount="indefinite"/></stop>
   </linearGradient>
   <linearGradient id="portrait" x1="0" y1="0" x2="0.9" y2="1">
     <stop offset="0" stop-color="{theme['cyan']}"/>
     <stop offset="0.5" stop-color="{theme['blue']}"/>
-    <stop offset="1" stop-color="{theme['violet']}"/>
+    <stop offset="1" stop-color="{theme['deep']}"/>
   </linearGradient>
   <radialGradient id="glow" cx="74%" cy="20%" r="72%">
     <stop offset="0" stop-color="{theme['blue']}" stop-opacity="0.14"/>
-    <stop offset="0.55" stop-color="{theme['violet']}" stop-opacity="0.05"/>
+    <stop offset="0.55" stop-color="{theme['deep']}" stop-opacity="0.05"/>
     <stop offset="1" stop-color="{theme['bg']}" stop-opacity="0"/>
   </radialGradient>
   <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
@@ -189,7 +174,7 @@ def hero_svg(theme: dict[str, str]) -> str:
 <g>
   <rect x="3" y="3" width="1174" height="614" rx="14" fill="none" stroke="url(#frame)" stroke-width="2"/>
   <path d="M3 43H1177" stroke="{theme['grid']}"/>
-  <circle cx="23" cy="23" r="5" fill="#F43F5E"/><circle cx="41" cy="23" r="5" fill="#F59E0B"/><circle cx="59" cy="23" r="5" fill="{theme['green']}"/>
+  <circle cx="23" cy="23" r="5" fill="{theme['deep']}"/><circle cx="41" cy="23" r="5" fill="{theme['blue']}"/><circle cx="59" cy="23" r="5" fill="{theme['green']}"/>
   <circle cx="1097" cy="22" r="4" fill="{theme['green']}" filter="url(#softGlow)"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.4s" repeatCount="indefinite"/></circle>
   <text x="1110" y="27" {mono} font-size="12" font-weight="700" fill="{theme['green']}">ATIVO</text>
 
@@ -231,7 +216,7 @@ def hero_svg(theme: dict[str, str]) -> str:
   <rect x="484" y="516" width="650" height="28" rx="7" fill="{theme['panel_alt']}" stroke="{theme['grid']}"/>
   <circle cx="505" cy="530" r="5" fill="{theme['cyan']}"><animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" repeatCount="indefinite"/></circle><text x="518" y="534" {tiny}>CRIAR</text>
   <path d="M580 530H681" stroke="{theme['grid']}" stroke-width="2"/><circle cx="699" cy="530" r="5" fill="{theme['blue']}"><animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" begin="0.35s" repeatCount="indefinite"/></circle><text x="712" y="534" {tiny}>APRENDER</text>
-  <path d="M804 530H899" stroke="{theme['grid']}" stroke-width="2"/><circle cx="917" cy="530" r="5" fill="{theme['violet']}"><animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" begin="0.7s" repeatCount="indefinite"/></circle><text x="930" y="534" {tiny}>ENTREGAR</text>
+  <path d="M804 530H899" stroke="{theme['grid']}" stroke-width="2"/><circle cx="917" cy="530" r="5" fill="{theme['deep']}"><animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" begin="0.7s" repeatCount="indefinite"/></circle><text x="930" y="534" {tiny}>ENTREGAR</text>
 </g>
 <g clip-path="url(#scanClip)" opacity="0.58">
   <rect x="22" y="32" width="1136" height="2" fill="url(#frame)" filter="url(#softGlow)">
@@ -251,7 +236,7 @@ def mission_svg(theme: dict[str, str]) -> str:
 <title id="title">Central de missão de nan733</title>
 <desc id="desc">Foco profissional, objetivos de estudo e princípios de desenvolvimento.</desc>
 <defs>
-  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="{theme['cyan']}"/><stop offset="0.52" stop-color="{theme['blue']}"/><stop offset="1" stop-color="{theme['violet']}"/></linearGradient>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="{theme['cyan']}"/><stop offset="0.52" stop-color="{theme['blue']}"/><stop offset="1" stop-color="{theme['deep']}"/></linearGradient>
   <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="{theme['grid']}" opacity="0.42"/></pattern>
   <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs>
@@ -281,18 +266,18 @@ def mission_svg(theme: dict[str, str]) -> str:
 <text x="815" y="123" {head}>Como eu construo</text>
 <text x="815" y="153" {body}>clareza antes de complexidade</text>
 <text x="815" y="178" {body}>qualidade desde o início</text>
-<circle cx="1126" cy="118" r="5" fill="{theme['violet']}"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.2s" begin="0.5s" repeatCount="indefinite"/></circle>
+<circle cx="1126" cy="118" r="5" fill="{theme['deep']}"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.2s" begin="0.5s" repeatCount="indefinite"/></circle>
 </svg>'''
 
 
 def main() -> None:
     ASSETS.mkdir(exist_ok=True)
     for name, theme in THEMES.items():
-        (ASSETS / f"profile-header-v4-{name}.svg").write_text(
+        (ASSETS / f"profile-header-v5-{name}.svg").write_text(
             header_svg(theme), encoding="utf-8"
         )
-        (ASSETS / f"profile-v5-{name}.svg").write_text(hero_svg(theme), encoding="utf-8")
-        (ASSETS / f"mission-control-v5-{name}.svg").write_text(
+        (ASSETS / f"profile-v6-{name}.svg").write_text(hero_svg(theme), encoding="utf-8")
+        (ASSETS / f"mission-control-v6-{name}.svg").write_text(
             mission_svg(theme), encoding="utf-8"
         )
 

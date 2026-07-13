@@ -24,7 +24,7 @@ STATE = ASSETS / "contribution-stats.json"
 API_URL = "https://api.github.com/graphql"
 README_START = "<!-- contribution-stats:start -->"
 README_END = "<!-- contribution-stats:end -->"
-LAYOUT_VERSION = 6
+LAYOUT_VERSION = 7
 
 try:
     PROFILE_TIMEZONE = ZoneInfo("America/Sao_Paulo")
@@ -48,28 +48,28 @@ MONTHS = (
 
 THEMES = {
     "dark": {
-        "bg": "#070B14",
-        "panel": "#0B1220",
-        "panel_alt": "#0E1728",
-        "grid": "#172337",
-        "ink": "#DCE8F5",
-        "muted": "#7E93AA",
-        "cyan": "#22D3EE",
-        "blue": "#60A5FA",
-        "green": "#2DD4BF",
-        "violet": "#A78BFA",
+        "bg": "#050D09",
+        "panel": "#081A12",
+        "panel_alt": "#0E2419",
+        "grid": "#173A2A",
+        "ink": "#E7F4EC",
+        "muted": "#8AA596",
+        "cyan": "#2DD49A",
+        "blue": "#58D6A4",
+        "green": "#8BE0B8",
+        "violet": "#D1AA68",
     },
     "light": {
-        "bg": "#F7FAFC",
+        "bg": "#F2F7F4",
         "panel": "#FFFFFF",
-        "panel_alt": "#EDF5FB",
-        "grid": "#DCE7F1",
-        "ink": "#172033",
-        "muted": "#64748B",
-        "cyan": "#0891B2",
-        "blue": "#2563EB",
-        "green": "#0F766E",
-        "violet": "#7C3AED",
+        "panel_alt": "#E7F2EC",
+        "grid": "#D4E5DB",
+        "ink": "#173026",
+        "muted": "#61786B",
+        "cyan": "#0A7F55",
+        "blue": "#15966A",
+        "green": "#2E7D5A",
+        "violet": "#8C652F",
     },
 }
 

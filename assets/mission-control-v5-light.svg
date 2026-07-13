@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="240" viewBox="0 0 1180 240" role="img" aria-labelledby="title desc">
+<title id="title">Central de missão de nan733</title>
+<desc id="desc">Foco profissional, objetivos de estudo e princípios de desenvolvimento.</desc>
+<defs>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#0A7F55"/><stop offset="0.52" stop-color="#15966A"/><stop offset="1" stop-color="#8C652F"/></linearGradient>
+  <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="#D4E5DB" opacity="0.42"/></pattern>
+  <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<rect width="1180" height="240" rx="14" fill="#F2F7F4"/>
+<rect width="1180" height="240" rx="14" fill="url(#grid)"/>
+<rect x="3" y="3" width="1174" height="234" rx="12" fill="none" stroke="url(#accent)" stroke-width="2"/>
+<text x="24" y="32" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="14" font-weight="800" fill="#0A7F55">VISÃO.GERAL</text>
+<text x="1156" y="32" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="14" font-weight="600" fill="#61786B">FOCO / APRENDIZADO / PRINCÍPIOS</text>
+<path d="M24 43H1156" stroke="#D4E5DB"/>
+
+<rect x="24" y="62" width="360" height="152" rx="8" fill="#FFFFFF" stroke="#D4E5DB"/>
+<text x="43" y="89" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="14" font-weight="800" fill="#0A7F55">01 // FOCO</text>
+<text x="43" y="123" font-family="Inter, Segoe UI, Arial, sans-serif" letter-spacing="0" font-size="22" font-weight="800" fill="#173026">Desenvolvimento Full-Stack</text>
+<text x="43" y="153" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="14" font-weight="600" fill="#61786B">interfaces web responsivas</text>
+<text x="43" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="14" font-weight="600" fill="#61786B">React, Python, APIs e automação</text>
+<rect x="43" y="198" width="286" height="4" rx="2" fill="#D4E5DB"/><rect x="43" y="198" width="196" height="4" rx="2" fill="#2E7D5A"><animate attributeName="width" values="150;196;182;196" dur="4s" repeatCount="indefinite"/></rect>
+
+<rect x="410" y="62" width="360" height="152" rx="8" fill="#FFFFFF" stroke="#D4E5DB"/>
+<text x="429" y="89" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="14" font-weight="800" fill="#0A7F55">02 // APRENDIZADO</text>
+<text x="429" y="123" font-family="Inter, Segoe UI, Arial, sans-serif" letter-spacing="0" font-size="22" font-weight="800" fill="#173026">Estudos em andamento</text>
+<text x="429" y="153" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="14" font-weight="600" fill="#61786B">APIs + modelagem de dados</text>
+<text x="429" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="14" font-weight="600" fill="#61786B">interfaces + testes confiáveis</text>
+<circle cx="740" cy="118" r="5" fill="#15966A"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.2s" repeatCount="indefinite"/></circle>
+
+<rect x="796" y="62" width="360" height="152" rx="8" fill="#FFFFFF" stroke="#D4E5DB"/>
+<text x="815" y="89" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="14" font-weight="800" fill="#0A7F55">03 // PRINCÍPIOS</text>
+<text x="815" y="123" font-family="Inter, Segoe UI, Arial, sans-serif" letter-spacing="0" font-size="22" font-weight="800" fill="#173026">Como eu construo</text>
+<text x="815" y="153" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="14" font-weight="600" fill="#61786B">clareza antes de complexidade</text>
+<text x="815" y="178" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="14" font-weight="600" fill="#61786B">qualidade desde o início</text>
+<circle cx="1126" cy="118" r="5" fill="#8C652F"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.2s" begin="0.5s" repeatCount="indefinite"/></circle>
+</svg>

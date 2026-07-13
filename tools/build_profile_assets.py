@@ -59,30 +59,30 @@ ASCII_ART = r"""
 
 THEMES = {
     "dark": {
-        "bg": "#070B14",
-        "panel": "#0B1220",
-        "panel_alt": "#0E1728",
-        "ink": "#DCE8F5",
-        "muted": "#7E93AA",
-        "grid": "#172337",
-        "cyan": "#22D3EE",
-        "green": "#2DD4BF",
-        "blue": "#60A5FA",
-        "violet": "#A78BFA",
-        "shadow": "#020617",
+        "bg": "#050D09",
+        "panel": "#081A12",
+        "panel_alt": "#0E2419",
+        "ink": "#E7F4EC",
+        "muted": "#8AA596",
+        "grid": "#173A2A",
+        "cyan": "#2DD49A",
+        "green": "#8BE0B8",
+        "blue": "#58D6A4",
+        "violet": "#D1AA68",
+        "shadow": "#010604",
     },
     "light": {
-        "bg": "#F4F8FC",
+        "bg": "#F2F7F4",
         "panel": "#FFFFFF",
-        "panel_alt": "#EDF5FB",
-        "ink": "#172033",
-        "muted": "#64748B",
-        "grid": "#DCE7F1",
-        "cyan": "#0891B2",
-        "green": "#0F766E",
-        "blue": "#2563EB",
-        "violet": "#7C3AED",
-        "shadow": "#94A3B8",
+        "panel_alt": "#E7F2EC",
+        "ink": "#173026",
+        "muted": "#61786B",
+        "grid": "#D4E5DB",
+        "cyan": "#0A7F55",
+        "green": "#2E7D5A",
+        "blue": "#15966A",
+        "violet": "#8C652F",
+        "shadow": "#7C9487",
     },
 }
 
@@ -288,11 +288,11 @@ def mission_svg(theme: dict[str, str]) -> str:
 def main() -> None:
     ASSETS.mkdir(exist_ok=True)
     for name, theme in THEMES.items():
-        (ASSETS / f"profile-header-v3-{name}.svg").write_text(
+        (ASSETS / f"profile-header-v4-{name}.svg").write_text(
             header_svg(theme), encoding="utf-8"
         )
-        (ASSETS / f"profile-v4-{name}.svg").write_text(hero_svg(theme), encoding="utf-8")
-        (ASSETS / f"mission-control-v4-{name}.svg").write_text(
+        (ASSETS / f"profile-v5-{name}.svg").write_text(hero_svg(theme), encoding="utf-8")
+        (ASSETS / f"mission-control-v5-{name}.svg").write_text(
             mission_svg(theme), encoding="utf-8"
         )
 

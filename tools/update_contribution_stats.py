@@ -14,6 +14,7 @@ import urllib.request
 from dataclasses import dataclass, replace
 from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo, ZoneInfoNotFoundError
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -23,7 +24,12 @@ STATE = ASSETS / "contribution-stats.json"
 API_URL = "https://api.github.com/graphql"
 README_START = "<!-- contribution-stats:start -->"
 README_END = "<!-- contribution-stats:end -->"
-LAYOUT_VERSION = 3
+LAYOUT_VERSION = 4
+
+try:
+    PROFILE_TIMEZONE = ZoneInfo("America/Sao_Paulo")
+except ZoneInfoNotFoundError:
+    PROFILE_TIMEZONE = timezone(timedelta(hours=-3))
 MONTHS = (
     "",
     "JAN",
@@ -106,6 +112,7 @@ class ContributionStats:
     login: str
     joined: date
     first_activity: date | None
+    as_of: date
     total: int
     current: Streak
     longest: Streak
@@ -244,6 +251,7 @@ def build_stats_once(login: str, token: str, now: datetime) -> ContributionStats
         login=login,
         joined=joined,
         first_activity=min(active_days) if active_days else None,
+        as_of=now.astimezone(PROFILE_TIMEZONE).date(),
         total=total,
         current=current_streak(days, joined, today),
         longest=longest_streak(days, joined, today),
@@ -348,6 +356,7 @@ def save_state(stats: ContributionStats) -> None:
         "first_activity": (
             stats.first_activity.isoformat() if stats.first_activity else None
         ),
+        "updated_on": stats.as_of.isoformat(),
         "total": stats.total,
         "current": streak_payload(stats.current),
         "longest": streak_payload(stats.longest),
@@ -395,7 +404,7 @@ def stats_svg(stats: ContributionStats, theme: dict[str, str]) -> str:
     total = html.escape(format_number(stats.total))
     current = html.escape(format_number(stats.current.count))
     longest = html.escape(format_number(stats.longest.count))
-    first_activity = html.escape(format_date(stats.first_activity))
+    updated_on = html.escape(format_date(stats.as_of))
     current_range = html.escape(format_range(stats.current))
     longest_range = html.escape(format_range(stats.longest))
     last_activity = html.escape(format_date(stats.last_activity))
@@ -433,7 +442,7 @@ def stats_svg(stats: ContributionStats, theme: dict[str, str]) -> str:
   <text x="213" y="91" {label}>TOTAL</text>
   <text x="213" y="153" {total_number}>{total}</text>
   <text x="213" y="181" {mono} font-size="13" font-weight="800" fill="{theme['ink']}">TOTAL DE CONTRIBUIÇÕES</text>
-  <text x="213" y="212" {muted}>{first_activity} - PRESENTE</text>
+  <text x="213" y="212" {muted}>ATUALIZADO EM {updated_on}</text>
   <path d="M115 230H311" stroke="{theme['blue']}" opacity="0.5"/>
 
   <circle cx="590" cy="130" r="62" fill="{theme['panel_alt']}" stroke="{theme['grid']}" stroke-width="10"/>
@@ -462,6 +471,7 @@ def fingerprint(stats: ContributionStats) -> str:
         "layout": LAYOUT_VERSION,
         "joined": stats.joined.isoformat(),
         "first_activity": str(stats.first_activity),
+        "updated_on": stats.as_of.isoformat(),
         "total": stats.total,
         "current": [stats.current.count, str(stats.current.start), str(stats.current.end)],
         "longest": [stats.longest.count, str(stats.longest.start), str(stats.longest.end)],
@@ -516,6 +526,7 @@ def main() -> None:
         json.dumps(
             {
                 "asset": digest,
+                "updated_on": stats.as_of.isoformat(),
                 "total": stats.total,
                 "current_streak": stats.current.count,
                 "longest_streak": stats.longest.count,

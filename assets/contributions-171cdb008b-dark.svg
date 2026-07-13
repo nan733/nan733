@@ -22,7 +22,7 @@
   <text x="213" y="91" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="800" fill="#22D3EE">TOTAL</text>
   <text x="213" y="153" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="60" font-weight="800" fill="#60A5FA">125</text>
   <text x="213" y="181" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="13" font-weight="800" fill="#DCE8F5">TOTAL DE CONTRIBUIÇÕES</text>
-  <text x="213" y="212" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">10 JUN 2025 - PRESENTE</text>
+  <text x="213" y="212" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">ATUALIZADO EM 13 JUL 2026</text>
   <path d="M115 230H311" stroke="#60A5FA" opacity="0.5"/>
 
   <circle cx="590" cy="130" r="62" fill="#0E1728" stroke="#172337" stroke-width="10"/>

@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nan733/nan733/main/assets/profile-header-v1-dark.svg">
-  <img width="100%" alt="Cabeçalho do perfil de Renan Oliveira" src="https://raw.githubusercontent.com/nan733/nan733/main/assets/profile-header-v1-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nan733/nan733/main/assets/profile-header-v2-dark.svg">
+  <img width="100%" alt="Cabeçalho animado do perfil de Renan Oliveira" src="https://raw.githubusercontent.com/nan733/nan733/main/assets/profile-header-v2-light.svg">
 </picture>
 
 <br>

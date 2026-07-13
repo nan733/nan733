@@ -102,7 +102,7 @@ def header_svg(theme: dict[str, str]) -> str:
     sans = 'font-family="Inter, Segoe UI, Arial, sans-serif" letter-spacing="0"'
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="190" viewBox="0 0 1180 190" role="img" aria-labelledby="title desc">
 <title id="title">Renan Oliveira, desenvolvedor Full-Stack em formação</title>
-<desc id="desc">Cabeçalho visual com o nome Renan Oliveira e sua área de atuação.</desc>
+<desc id="desc">Cabeçalho animado com ondas fluidas, o nome Renan Oliveira e sua área de atuação.</desc>
 <defs>
   <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
     <stop offset="0" stop-color="{theme['cyan']}"><animate attributeName="stop-color" values="{theme['cyan']};{theme['blue']};{theme['cyan']}" dur="8s" repeatCount="indefinite"/></stop>
@@ -110,9 +110,9 @@ def header_svg(theme: dict[str, str]) -> str:
     <stop offset="1" stop-color="{theme['violet']}"><animate attributeName="stop-color" values="{theme['violet']};{theme['green']};{theme['violet']}" dur="8s" repeatCount="indefinite"/></stop>
   </linearGradient>
   <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
-    <stop offset="0" stop-color="{theme['cyan']}" stop-opacity="0.34"/>
-    <stop offset="0.5" stop-color="{theme['blue']}" stop-opacity="0.24"/>
-    <stop offset="1" stop-color="{theme['violet']}" stop-opacity="0.38"/>
+    <stop offset="0" stop-color="{theme['cyan']}" stop-opacity="0.38"><animate attributeName="stop-color" values="{theme['cyan']};{theme['blue']};{theme['cyan']}" dur="11s" repeatCount="indefinite"/></stop>
+    <stop offset="0.5" stop-color="{theme['blue']}" stop-opacity="0.26"><animate attributeName="stop-color" values="{theme['blue']};{theme['violet']};{theme['blue']}" dur="11s" repeatCount="indefinite"/></stop>
+    <stop offset="1" stop-color="{theme['violet']}" stop-opacity="0.42"><animate attributeName="stop-color" values="{theme['violet']};{theme['green']};{theme['violet']}" dur="11s" repeatCount="indefinite"/></stop>
   </linearGradient>
   <radialGradient id="glow" cx="50%" cy="18%" r="76%">
     <stop offset="0" stop-color="{theme['cyan']}" stop-opacity="0.14"/>
@@ -132,17 +132,34 @@ def header_svg(theme: dict[str, str]) -> str:
   <rect width="1180" height="190" fill="{theme['bg']}"/>
   <rect width="1180" height="190" fill="url(#grid)"/>
   <rect width="1180" height="190" fill="url(#glow)"/>
-  <path d="M0 0H1180V126C1000 105 829 99 660 108C448 119 232 145 0 160Z" fill="url(#wave)"/>
-  <path d="M0 151C214 133 410 116 604 116C805 116 1000 140 1180 148V190H0Z" fill="{theme['panel']}" fill-opacity="0.78"/>
-  <path d="M0 151C214 133 410 116 604 116C805 116 1000 140 1180 148" fill="none" stroke="url(#accent)" stroke-width="2" opacity="0.72" filter="url(#softGlow)"/>
+  <path id="waveField" d="M0 0H1180V126C1000 105 829 99 660 108C448 119 232 145 0 160Z" fill="url(#wave)">
+    <animate attributeName="d" values="M0 0H1180V126C1000 105 829 99 660 108C448 119 232 145 0 160Z;M0 0H1180V146C1015 126 846 111 672 117C460 125 244 138 0 151Z;M0 0H1180V126C1000 105 829 99 660 108C448 119 232 145 0 160Z" dur="10s" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" repeatCount="indefinite"/>
+  </path>
+  <path id="frontWave" d="M0 151C214 133 410 116 604 116C805 116 1000 140 1180 148V190H0Z" fill="{theme['panel']}" fill-opacity="0.8">
+    <animate attributeName="d" values="M0 151C214 133 410 116 604 116C805 116 1000 140 1180 148V190H0Z;M0 162C200 143 399 128 592 126C790 124 997 128 1180 139V190H0Z;M0 151C214 133 410 116 604 116C805 116 1000 140 1180 148V190H0Z" dur="12s" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" repeatCount="indefinite"/>
+  </path>
+  <path id="energyLine" d="M0 151C214 133 410 116 604 116C805 116 1000 140 1180 148" fill="none" stroke="url(#accent)" stroke-width="2" stroke-dasharray="26 12" opacity="0.86" filter="url(#softGlow)">
+    <animate attributeName="d" values="M0 151C214 133 410 116 604 116C805 116 1000 140 1180 148;M0 162C200 143 399 128 592 126C790 124 997 128 1180 139;M0 151C214 133 410 116 604 116C805 116 1000 140 1180 148" dur="12s" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" repeatCount="indefinite"/>
+    <animate attributeName="stroke-dashoffset" values="76;0" dur="3.4s" repeatCount="indefinite"/>
+  </path>
+  <path d="M0 169C232 151 438 137 626 138C828 139 1014 158 1180 158" fill="none" stroke="url(#accent)" stroke-width="1" stroke-dasharray="8 18" opacity="0.38">
+    <animate attributeName="d" values="M0 169C232 151 438 137 626 138C828 139 1014 158 1180 158;M0 158C220 147 420 143 610 146C814 149 1008 151 1180 151;M0 169C232 151 438 137 626 138C828 139 1014 158 1180 158" dur="14s" repeatCount="indefinite"/>
+    <animate attributeName="stroke-dashoffset" values="0;-104" dur="7s" repeatCount="indefinite"/>
+  </path>
+  <circle id="signalPoint" r="4" fill="{theme['cyan']}" filter="url(#softGlow)" opacity="0">
+    <animateMotion path="M0 151C214 133 410 116 604 116C805 116 1000 140 1180 148" dur="8s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.9;1" dur="8s" repeatCount="indefinite"/>
+  </circle>
 </g>
 <rect x="3" y="3" width="1174" height="184" rx="12" fill="none" stroke="url(#accent)" stroke-width="2"/>
 <g text-anchor="middle">
-  <text x="590" y="76" {sans} font-size="46" font-weight="800" fill="{theme['ink']}">Renan <tspan fill="{theme['cyan']}">Oliveira</tspan></text>
+  <text x="590" y="76" {sans} font-size="46" font-weight="800" fill="{theme['ink']}">Renan <tspan fill="{theme['cyan']}">Oliveira<animate attributeName="fill" values="{theme['cyan']};{theme['blue']};{theme['violet']};{theme['cyan']}" dur="8s" repeatCount="indefinite"/></tspan></text>
   <text x="590" y="111" {mono} font-size="17" font-weight="700" fill="{theme['ink']}">DESENVOLVEDOR FULL-STACK EM FORMAÇÃO</text>
-  <path d="M530 132H650" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" filter="url(#softGlow)"/>
-  <circle cx="518" cy="132" r="3" fill="{theme['cyan']}"/>
-  <circle cx="662" cy="132" r="3" fill="{theme['violet']}"/>
+  <path d="M530 132H650" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" stroke-dasharray="34 12" filter="url(#softGlow)">
+    <animate attributeName="stroke-dashoffset" values="92;0" dur="2.8s" repeatCount="indefinite"/>
+  </path>
+  <circle cx="518" cy="132" r="3" fill="{theme['cyan']}"><animate attributeName="r" values="2.5;4;2.5" dur="2.4s" repeatCount="indefinite"/></circle>
+  <circle cx="662" cy="132" r="3" fill="{theme['violet']}"><animate attributeName="r" values="2.5;4;2.5" dur="2.4s" begin="0.6s" repeatCount="indefinite"/></circle>
 </g>
 </svg>'''
 
@@ -288,7 +305,7 @@ def mission_svg(theme: dict[str, str]) -> str:
 def main() -> None:
     ASSETS.mkdir(exist_ok=True)
     for name, theme in THEMES.items():
-        (ASSETS / f"profile-header-v1-{name}.svg").write_text(
+        (ASSETS / f"profile-header-v2-{name}.svg").write_text(
             header_svg(theme), encoding="utf-8"
         )
         (ASSETS / f"profile-v3-{name}.svg").write_text(hero_svg(theme), encoding="utf-8")

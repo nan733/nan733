@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="280" viewBox="0 0 1180 280" role="img" aria-labelledby="title desc">
+<title id="title">Renan Oliveira, desenvolvedor Full-Stack em formação</title>
+<desc id="desc">Cabeçalho animado com ondas fluidas, o nome Renan Oliveira e sua área de atuação.</desc>
+<defs>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#24B77C"><animate attributeName="stop-color" values="#24B77C;#187A53;#24B77C" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="0.52" stop-color="#187A53"><animate attributeName="stop-color" values="#187A53;#357C5A;#187A53" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="1" stop-color="#357C5A"><animate attributeName="stop-color" values="#357C5A;#52C994;#357C5A" dur="8s" repeatCount="indefinite"/></stop>
+  </linearGradient>
+  <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#24B77C" stop-opacity="0.38"><animate attributeName="stop-color" values="#24B77C;#187A53;#24B77C" dur="11s" repeatCount="indefinite"/></stop>
+    <stop offset="0.5" stop-color="#187A53" stop-opacity="0.26"><animate attributeName="stop-color" values="#187A53;#357C5A;#187A53" dur="11s" repeatCount="indefinite"/></stop>
+    <stop offset="1" stop-color="#357C5A" stop-opacity="0.42"><animate attributeName="stop-color" values="#357C5A;#52C994;#357C5A" dur="11s" repeatCount="indefinite"/></stop>
+  </linearGradient>
+  <linearGradient id="name" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#E3F0E9"/>
+    <stop offset="0.48" stop-color="#E3F0E9"/>
+    <stop offset="0.58" stop-color="#24B77C"><animate attributeName="stop-color" values="#24B77C;#187A53;#357C5A;#24B77C" dur="10s" repeatCount="indefinite"/></stop>
+    <stop offset="1" stop-color="#187A53"><animate attributeName="stop-color" values="#187A53;#357C5A;#24B77C;#187A53" dur="10s" repeatCount="indefinite"/></stop>
+  </linearGradient>
+  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+    <path d="M24 0H0V24" fill="none" stroke="#113020" stroke-width="1" opacity="0.48"/>
+  </pattern>
+  <clipPath id="frameClip"><rect width="1180" height="280" rx="14"/></clipPath>
+</defs>
+<g clip-path="url(#frameClip)">
+  <rect width="1180" height="280" fill="#030806"/>
+  <rect width="1180" height="280" fill="url(#grid)"/>
+  <path id="backWave" d="M0 221C220 202 420 200 620 209C820 218 1000 215 1180 202V280H0Z" fill="url(#wave)" opacity="0.78">
+    <animate attributeName="d" values="M0 221C220 202 420 200 620 209C820 218 1000 215 1180 202V280H0Z;M0 212C220 220 420 212 620 202C820 192 1000 200 1180 217V280H0Z;M0 221C220 202 420 200 620 209C820 218 1000 215 1180 202V280H0Z" dur="13s" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.66;0.84;0.66" dur="13s" repeatCount="indefinite"/>
+  </path>
+  <path id="frontWave" d="M0 247C230 231 426 227 618 234C820 241 1008 244 1180 231V280H0Z" fill="#06110B" fill-opacity="0.9">
+    <animate attributeName="d" values="M0 247C230 231 426 227 618 234C820 241 1008 244 1180 231V280H0Z;M0 236C224 244 426 241 620 231C818 221 1006 227 1180 245V280H0Z;M0 247C230 231 426 227 618 234C820 241 1008 244 1180 231V280H0Z" dur="16s" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" repeatCount="indefinite"/>
+  </path>
+  <path id="waveLine" d="M0 221C220 202 420 200 620 209C820 218 1000 215 1180 202" fill="none" stroke="url(#accent)" stroke-width="2.5" opacity="0.94">
+    <animate attributeName="d" values="M0 221C220 202 420 200 620 209C820 218 1000 215 1180 202;M0 212C220 220 420 212 620 202C820 192 1000 200 1180 217;M0 221C220 202 420 200 620 209C820 218 1000 215 1180 202" dur="13s" calcMode="spline" keyTimes="0;0.5;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1" repeatCount="indefinite"/>
+  </path>
+</g>
+<rect x="3" y="3" width="1174" height="274" rx="12" fill="none" stroke="url(#accent)" stroke-width="2"/>
+<g text-anchor="middle">
+  <text x="590" y="82" font-family="Inter, Segoe UI, Arial, sans-serif" letter-spacing="0" font-size="68" font-weight="800" fill="url(#name)">Renan Oliveira</text>
+  <text x="590" y="132" font-family="Inter, Segoe UI, Arial, sans-serif" letter-spacing="0" font-size="31" font-weight="700" fill="#E3F0E9">Desenvolvedor Full-Stack em Formação</text>
+  <text x="590" y="172" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="19" font-weight="700" fill="#24B77C">INTERFACES WEB / APIs / DADOS / AUTOMAÇÃO</text>
+</g>
+</svg>

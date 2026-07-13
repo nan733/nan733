@@ -24,7 +24,7 @@ STATE = ASSETS / "contribution-stats.json"
 API_URL = "https://api.github.com/graphql"
 README_START = "<!-- contribution-stats:start -->"
 README_END = "<!-- contribution-stats:end -->"
-LAYOUT_VERSION = 8
+LAYOUT_VERSION = 9
 
 try:
     PROFILE_TIMEZONE = ZoneInfo("America/Sao_Paulo")
@@ -396,10 +396,10 @@ def format_range(streak: Streak) -> str:
 
 def stats_svg(stats: ContributionStats, theme: dict[str, str]) -> str:
     mono = 'font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0"'
-    label = f'{mono} font-size="15" font-weight="800" fill="{theme["cyan"]}"'
-    muted = f'{mono} font-size="13" font-weight="600" fill="{theme["muted"]}"'
-    total_number = f'{mono} font-size="70" font-weight="800" fill="{theme["blue"]}"'
-    longest_number = f'{mono} font-size="70" font-weight="800" fill="{theme["deep"]}"'
+    label = f'{mono} font-size="18" font-weight="800" fill="{theme["cyan"]}"'
+    muted = f'{mono} font-size="16" font-weight="650" fill="{theme["muted"]}"'
+    total_number = f'{mono} font-size="82" font-weight="800" fill="{theme["blue"]}"'
+    longest_number = f'{mono} font-size="82" font-weight="800" fill="{theme["deep"]}"'
 
     total = html.escape(format_number(stats.total))
     current = html.escape(format_number(stats.current.count))
@@ -413,12 +413,12 @@ def stats_svg(stats: ContributionStats, theme: dict[str, str]) -> str:
         f"{stats.total} contribuições, sequência atual de {stats.current.count} dias e "
         f"maior sequência de {stats.longest.count} dias."
     )
-    circumference = 2 * 3.141592653589793 * 68
+    circumference = 2 * 3.141592653589793 * 76
     progress = 0 if stats.longest.count == 0 else min(stats.current.count / stats.longest.count, 1)
     progress_length = circumference * progress
-    current_font_size = 60 if len(current) <= 2 else 48 if len(current) <= 3 else 38
+    current_font_size = 68 if len(current) <= 2 else 54 if len(current) <= 3 else 42
 
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="330" viewBox="0 0 1180 330" role="img" aria-labelledby="title desc">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="390" viewBox="0 0 1180 390" role="img" aria-labelledby="title desc">
 <title id="title">Estatísticas de contribuições de {login}</title>
 <desc id="desc">{description}</desc>
 <defs>
@@ -427,42 +427,42 @@ def stats_svg(stats: ContributionStats, theme: dict[str, str]) -> str:
   <radialGradient id="centerGlow" cx="50%" cy="40%" r="52%"><stop offset="0" stop-color="{theme['cyan']}" stop-opacity="0.13"/><stop offset="1" stop-color="{theme['bg']}" stop-opacity="0"/></radialGradient>
   <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs>
-<rect width="1180" height="330" rx="14" fill="{theme['bg']}"/>
-<rect width="1180" height="330" rx="14" fill="url(#grid)"/>
-<rect width="1180" height="330" rx="14" fill="url(#centerGlow)"/>
-<rect x="3" y="3" width="1174" height="324" rx="12" fill="none" stroke="url(#accent)" stroke-width="2"/>
-<path d="M24 43H1156" stroke="{theme['grid']}"/>
-<text x="24" y="29" {label}>CONTRIBUIÇÕES.LOG // {login.upper()}</text>
-<text x="1156" y="29" text-anchor="end" {muted}>API OFICIAL // ÚLTIMA ATIVIDADE {last_activity}</text>
+<rect width="1180" height="390" rx="14" fill="{theme['bg']}"/>
+<rect width="1180" height="390" rx="14" fill="url(#grid)"/>
+<rect width="1180" height="390" rx="14" fill="url(#centerGlow)"/>
+<rect x="3" y="3" width="1174" height="384" rx="12" fill="none" stroke="url(#accent)" stroke-width="2"/>
+<path d="M24 52H1156" stroke="{theme['grid']}"/>
+<text x="24" y="36" {label}>CONTRIBUIÇÕES.LOG // {login.upper()}</text>
+<text x="1156" y="36" text-anchor="end" {muted}>API OFICIAL // ÚLTIMA ATIVIDADE {last_activity}</text>
 
-<rect x="24" y="62" width="1132" height="222" rx="8" fill="{theme['panel']}" fill-opacity="0.88" stroke="{theme['grid']}"/>
-<path d="M402 82V264M778 82V264" stroke="{theme['muted']}" stroke-width="2" opacity="0.5"/>
+<rect x="24" y="70" width="1132" height="278" rx="8" fill="{theme['panel']}" fill-opacity="0.88" stroke="{theme['grid']}"/>
+<path d="M402 92V326M778 92V326" stroke="{theme['muted']}" stroke-width="2" opacity="0.5"/>
 
 <g text-anchor="middle">
-  <text x="213" y="100" {label}>TOTAL</text>
-  <text x="213" y="171" {total_number}>{total}</text>
-  <text x="213" y="202" {mono} font-size="17" font-weight="800" fill="{theme['ink']}">TOTAL DE CONTRIBUIÇÕES</text>
-  <text x="213" y="235" {muted}>ATUALIZADO EM {updated_on}</text>
-  <path d="M115 256H311" stroke="{theme['blue']}" stroke-width="2" opacity="0.55"/>
+  <text x="213" y="112" {label}>TOTAL</text>
+  <text x="213" y="198" {total_number}>{total}</text>
+  <text x="213" y="238" {mono} font-size="20" font-weight="800" fill="{theme['ink']}">TOTAL DE CONTRIBUIÇÕES</text>
+  <text x="213" y="281" {muted}>ATUALIZADO EM {updated_on}</text>
+  <path d="M105 312H321" stroke="{theme['blue']}" stroke-width="2" opacity="0.55"/>
 
-  <circle cx="590" cy="149" r="68" fill="{theme['panel_alt']}" stroke="{theme['grid']}" stroke-width="11"/>
-  <circle cx="590" cy="149" r="68" fill="none" stroke="url(#accent)" stroke-width="11" stroke-linecap="round" stroke-dasharray="{progress_length:.1f} {circumference:.1f}" transform="rotate(-90 590 149)" filter="url(#glow)"/>
-  <path d="M590 50C590 50 605 64 605 75C605 84 599 91 590 91C581 91 575 84 575 76C575 67 580 61 585 56C585 62 587 66 591 68C596 62 595 56 590 50Z" fill="{theme['panel']}" stroke="{theme['cyan']}" stroke-width="3" stroke-linejoin="round" filter="url(#glow)"/>
-  <path d="M590 68C596 73 597 78 594 82C592 86 587 86 585 82C583 78 586 73 590 68Z" fill="{theme['cyan']}"><animate attributeName="opacity" values="0.55;1;0.55" dur="1.8s" repeatCount="indefinite"/></path>
-  <text x="590" y="169" {mono} font-size="{current_font_size}" font-weight="800" fill="{theme['ink']}">{current}</text>
-  <text x="590" y="246" {label}>SEQUÊNCIA ATUAL</text>
-  <text x="590" y="272" {muted}>{current_range}</text>
+  <circle cx="590" cy="178" r="76" fill="{theme['panel_alt']}" stroke="{theme['grid']}" stroke-width="12"/>
+  <circle cx="590" cy="178" r="76" fill="none" stroke="url(#accent)" stroke-width="12" stroke-linecap="round" stroke-dasharray="{progress_length:.1f} {circumference:.1f}" transform="rotate(-90 590 178)" filter="url(#glow)"/>
+  <path d="M590 63C590 63 607 78 607 91C607 101 600 109 590 109C580 109 573 101 573 92C573 82 579 75 584 69C584 76 587 80 591 82C597 75 596 69 590 63Z" fill="{theme['panel']}" stroke="{theme['cyan']}" stroke-width="3.5" stroke-linejoin="round" filter="url(#glow)"/>
+  <path d="M590 82C597 88 598 94 594 99C592 103 586 103 584 99C582 94 586 88 590 82Z" fill="{theme['cyan']}"><animate attributeName="opacity" values="0.55;1;0.55" dur="1.8s" repeatCount="indefinite"/></path>
+  <text x="590" y="201" {mono} font-size="{current_font_size}" font-weight="800" fill="{theme['ink']}">{current}</text>
+  <text x="590" y="293" {label}>SEQUÊNCIA ATUAL</text>
+  <text x="590" y="325" {muted}>{current_range}</text>
 
-  <text x="967" y="100" {label}>RECORDE</text>
-  <text x="967" y="171" {longest_number}>{longest}</text>
-  <text x="967" y="202" {mono} font-size="17" font-weight="800" fill="{theme['ink']}">MAIOR SEQUÊNCIA</text>
-  <text x="967" y="235" {muted}>{longest_range}</text>
-  <path d="M869 256H1065" stroke="{theme['deep']}" stroke-width="2" opacity="0.55"/>
+  <text x="967" y="112" {label}>RECORDE</text>
+  <text x="967" y="198" {longest_number}>{longest}</text>
+  <text x="967" y="238" {mono} font-size="20" font-weight="800" fill="{theme['ink']}">MAIOR SEQUÊNCIA</text>
+  <text x="967" y="281" {muted}>{longest_range}</text>
+  <path d="M859 312H1075" stroke="{theme['deep']}" stroke-width="2" opacity="0.55"/>
 </g>
 
-<circle cx="24" cy="307" r="4" fill="{theme['green']}" filter="url(#glow)"><animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" repeatCount="indefinite"/></circle>
-<text x="37" y="312" {muted}>STATUS // SINCRONIZADO</text>
-<text x="1156" y="312" text-anchor="end" {muted}>FONTE // GITHUB GRAPHQL</text>
+<circle cx="24" cy="371" r="5" fill="{theme['green']}" filter="url(#glow)"><animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" repeatCount="indefinite"/></circle>
+<text x="41" y="377" {muted}>STATUS // SINCRONIZADO</text>
+<text x="1156" y="377" text-anchor="end" {muted}>FONTE // GITHUB GRAPHQL</text>
 </svg>'''
 
 

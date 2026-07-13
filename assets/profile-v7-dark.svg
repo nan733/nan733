@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-labelledby="title desc">
+<title id="title">Painel de perfil do desenvolvedor nan733</title>
+<desc id="desc">Interface de terminal animada com retrato ASCII, stack de desenvolvimento e foco profissional.</desc>
+<defs>
+  <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#2E7D57"><animate attributeName="stop-color" values="#2E7D57;#20B978;#4BC98F;#2E7D57" dur="10s" repeatCount="indefinite"/></stop>
+    <stop offset="0.52" stop-color="#20B978"><animate attributeName="stop-color" values="#20B978;#4BC98F;#13734D;#20B978" dur="10s" repeatCount="indefinite"/></stop>
+    <stop offset="1" stop-color="#4BC98F"><animate attributeName="stop-color" values="#4BC98F;#13734D;#2E7D57;#4BC98F" dur="10s" repeatCount="indefinite"/></stop>
+  </linearGradient>
+  <linearGradient id="portrait" x1="0" y1="0" x2="0.9" y2="1">
+    <stop offset="0" stop-color="#20B978"/>
+    <stop offset="0.5" stop-color="#13734D"/>
+    <stop offset="1" stop-color="#2E7D57"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="74%" cy="20%" r="72%">
+    <stop offset="0" stop-color="#13734D" stop-opacity="0.14"/>
+    <stop offset="0.55" stop-color="#2E7D57" stop-opacity="0.05"/>
+    <stop offset="1" stop-color="#010403" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+    <path d="M 24 0 L 0 0 0 24" fill="none" stroke="#0C291B" stroke-width="1" opacity="0.46"/>
+  </pattern>
+  <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="3" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <clipPath id="scanClip"><rect x="22" y="66" width="1136" height="646" rx="12"/></clipPath>
+</defs>
+<rect width="1180" height="760" rx="16" fill="#010403"/>
+<rect width="1180" height="760" rx="16" fill="url(#grid)"/>
+<rect width="1180" height="760" rx="16" fill="url(#glow)"/>
+<g>
+  <rect x="3" y="3" width="1174" height="754" rx="14" fill="none" stroke="url(#frame)" stroke-width="2"/>
+  <path d="M3 50H1177" stroke="#0C291B"/>
+  <circle cx="24" cy="25" r="6" fill="#2E7D57"/><circle cx="45" cy="25" r="6" fill="#13734D"/><circle cx="66" cy="25" r="6" fill="#4BC98F"/>
+  <circle cx="1089" cy="25" r="5" fill="#4BC98F" filter="url(#softGlow)"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.4s" repeatCount="indefinite"/></circle>
+  <text x="1105" y="31" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="14" font-weight="800" fill="#4BC98F">ATIVO</text>
+
+  <rect x="22" y="66" width="408" height="646" rx="12" fill="#030C08" fill-opacity="0.84" stroke="#0C291B"/>
+  <path d="M22 106H430" stroke="#0C291B"/>
+  <text x="40" y="92" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="17" font-weight="800" fill="#20B978">IDENTIDADE.SCAN</text>
+  <text x="412" y="92" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="15" font-weight="600" fill="#728D7E">AVATAR PÚBLICO</text>
+  <text font-family="Consolas, Courier New, monospace" font-size="9.2" fill="url(#portrait)"><tspan x="46" y="128.0" xml:space="preserve">                                       .: -</tspan>
+<tspan x="46" y="139.4" xml:space="preserve">                                .::::.</tspan>
+<tspan x="46" y="150.8" xml:space="preserve">                            .-*********==-::.</tspan>
+<tspan x="46" y="162.2" xml:space="preserve">                           -**+****####******=.</tspan>
+<tspan x="46" y="173.6" xml:space="preserve">                          :*++***######****++=*:</tspan>
+<tspan x="46" y="185.0" xml:space="preserve">                          ********#######***+=--=</tspan>
+<tspan x="46" y="196.4" xml:space="preserve">                         .*=---==++*##%#++===**:.</tspan>
+<tspan x="46" y="207.8" xml:space="preserve">                         ===*******#%##*===-:..:</tspan>
+<tspan x="46" y="219.2" xml:space="preserve">                         *+***#*+**###*++*****:..</tspan>
+<tspan x="46" y="230.6" xml:space="preserve">                       ..*+=----++**#+=+=++****..</tspan>
+<tspan x="46" y="242.0" xml:space="preserve">                      +*=**++++******==+++:::.-*</tspan>
+<tspan x="46" y="253.4" xml:space="preserve">                      +*++*######**##+=+*****==*.*</tspan>
+<tspan x="46" y="264.8" xml:space="preserve">                      -*+**#####**###*+=*##**+=-:*</tspan>
+<tspan x="46" y="276.2" xml:space="preserve">                      :*+**#####++*#*===+###**+-::</tspan>
+<tspan x="46" y="287.6" xml:space="preserve">                       +=+*###***++====+**##**=:-</tspan>
+<tspan x="46" y="299.0" xml:space="preserve">                        .***#+-==++**+===-***+-..</tspan>
+<tspan x="46" y="310.4" xml:space="preserve">                         =**#*+=+*##*+=--+**+*.</tspan>
+<tspan x="46" y="321.8" xml:space="preserve">                         .+**##**+++++++***+=:</tspan>
+<tspan x="46" y="333.2" xml:space="preserve">                         .+=+**##*+++***+==-:.</tspan>
+<tspan x="46" y="344.6" xml:space="preserve">                         .*==+***#****+*=--::-</tspan>
+<tspan x="46" y="356.0" xml:space="preserve">                         :+*+==+*###***=-::-+*.</tspan>
+<tspan x="46" y="367.4" xml:space="preserve">                      -*#==+*+========-::-=*+=:*+-:</tspan>
+<tspan x="46" y="378.8" xml:space="preserve">                   -*%@@%+=+**+++==-----=**+==-#%@%#+:</tspan>
+<tspan x="46" y="390.2" xml:space="preserve">               .=#%@@%%@@#=+***+++**+===++++=-*%%%%%%%%+:</tspan>
+<tspan x="46" y="401.6" xml:space="preserve">            .-*%%%%%%%@@@@#++***++++++++*++++#%@@%%%%%%%%#+:</tspan>
+<tspan x="46" y="413.0" xml:space="preserve">         .=*%%%%%%%%%@@@@@@%#***++*++++++++*%@@@%%%%%%%%%%%%#+:.</tspan>
+<tspan x="46" y="424.4" xml:space="preserve">     .=*#%%%%%%%%%%%%@@@@@@@@%##**+++****#%@@@%%%%%%%%%%%%%#%%%%#=</tspan>
+<tspan x="46" y="435.8" xml:space="preserve">    -%@%%%%%%%%%%%%%%%%%@@@@@@@@@@%%%%@@@@@@@%%%%%%%%%%%%%%%%%##%#*.</tspan>
+<tspan x="46" y="447.2" xml:space="preserve">  .*@%%%%%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@%%%%%%%%%%%%%%%%%%%%%%#%%+.</tspan>
+<tspan x="46" y="458.6" xml:space="preserve"> .%%%%%%%%%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@%%%%%%%%%%%%%%%%%%%%%%%%%%%%#=</tspan>
+<tspan x="46" y="470.0" xml:space="preserve">:%%%%%%%%@%%%%%%%%%%@@@@@@@@@@@@@@@@@@@@@%%%%%%%%%%%%%%%%%%%%%%%%%%%###*</tspan>
+<tspan x="46" y="481.4" xml:space="preserve">#%%%%%%%%%@%%%%%%%%@@@@@@@@@@@@@@@@@@@@@@@%%%%%%%%%%%%%%%%%%%%%%%%%%####</tspan>
+<tspan x="46" y="492.8" xml:space="preserve">%%%%%%%%%%%%@%%%%%@@@@@@@@@@@@@@@@@@@@@@%%%%%%%%%%%%%%%%%%%%%%%%%%%#%###</tspan></text>
+  <rect x="40" y="670" width="372" height="2" fill="url(#frame)" opacity="0.7"/>
+  <text x="40" y="698" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="15" font-weight="600" fill="#728D7E">ASSINATURA</text>
+  <text x="174" y="698" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="15" font-weight="800" fill="#4BC98F">RENAN.OLIVEIRA // VERIFICADO</text>
+
+  <rect x="448" y="66" width="710" height="646" rx="12" fill="#030C08" fill-opacity="0.84" stroke="#0C291B"/>
+  <path d="M448 106H1158" stroke="#0C291B"/>
+  <text x="474" y="92" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="17" font-weight="800" fill="#20B978">PERFIL.OS</text>
+  <text x="1134" y="92" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="15" font-weight="600" fill="#728D7E">VERSÃO 2026.07 // PT-BR</text>
+
+  <text x="474" y="153" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="38" font-weight="800" fill="#DDEBE3">@nan733 <tspan fill="#728D7E">//</tspan> <tspan fill="#20B978">Renan Oliveira</tspan></text>
+  <rect x="474" y="173" width="660" height="2" fill="url(#frame)" opacity="0.72"/>
+
+  <text x="474" y="205" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="17" font-weight="800" fill="#20B978">PERFIL.PROFISSIONAL</text>
+  <path d="M474 216H1134" stroke="#0C291B"/>
+  <text x="474" y="247" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="16" font-weight="700" fill="#728D7E">PERFIL</text><text x="655" y="247" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="18" font-weight="650" fill="#DDEBE3">Desenvolvedor Full-Stack em formação</text>
+  <text x="474" y="282" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="16" font-weight="700" fill="#728D7E">OBJETIVO</text><text x="655" y="282" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="18" font-weight="650" fill="#DDEBE3">Criar produtos web claros e funcionais</text>
+  <text x="474" y="317" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="16" font-weight="700" fill="#728D7E">MOMENTO</text><text x="655" y="317" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="18" font-weight="650" fill="#DDEBE3">Aprendendo, construindo e evoluindo</text>
+  <text x="474" y="352" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="16" font-weight="700" fill="#728D7E">FOCO</text><text x="655" y="352" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="18" font-weight="650" fill="#DDEBE3">React / Node.js / Python / APIs</text>
+
+  <text x="474" y="392" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="17" font-weight="800" fill="#20B978">STACK.PRINCIPAL</text>
+  <path d="M474 404H1134" stroke="#0C291B"/>
+  <text x="474" y="439" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="16" font-weight="700" fill="#728D7E">FRONTEND</text><text x="655" y="439" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="18" font-weight="650" fill="#DDEBE3">React / Vite / JavaScript</text>
+  <text x="474" y="474" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="16" font-weight="700" fill="#728D7E">BACKEND</text><text x="655" y="474" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="18" font-weight="650" fill="#DDEBE3">Python / Flask / APIs REST</text>
+  <text x="474" y="509" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="16" font-weight="700" fill="#728D7E">DADOS</text><text x="655" y="509" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="18" font-weight="650" fill="#DDEBE3">SQLite / Turso / Supabase</text>
+  <text x="474" y="544" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="16" font-weight="700" fill="#728D7E">FLUXO</text><text x="655" y="544" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="18" font-weight="650" fill="#DDEBE3">Git / GitHub / automação</text>
+
+  <rect x="474" y="566" width="660" height="86" rx="8" fill="#06150E" stroke="#0C291B"/>
+  <text x="494" y="593" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="17" font-weight="800" fill="#20B978">PRÓXIMO.PASSO</text>
+  <text x="494" y="624" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="22" font-weight="800" fill="#DDEBE3">Consolidar minha evolução Full-Stack</text>
+  <text x="494" y="646" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="15" font-weight="600" fill="#728D7E">projetos úteis / código claro / melhoria contínua</text>
+  <circle cx="1106" cy="609" r="10" fill="none" stroke="#4BC98F" opacity="0.42"/>
+  <circle cx="1106" cy="609" r="5" fill="#4BC98F"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.4s" repeatCount="indefinite"/></circle>
+
+  <rect x="474" y="666" width="660" height="32" rx="7" fill="#06150E" stroke="#0C291B"/>
+  <circle cx="496" cy="682" r="6" fill="#20B978"><animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" repeatCount="indefinite"/></circle><text x="512" y="687" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="15" font-weight="600" fill="#728D7E">CRIAR</text>
+  <path d="M581 682H684" stroke="#0C291B" stroke-width="2"/><circle cx="704" cy="682" r="6" fill="#13734D"><animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" begin="0.35s" repeatCount="indefinite"/></circle><text x="720" y="687" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="15" font-weight="600" fill="#728D7E">EVOLUIR</text>
+  <path d="M814 682H910" stroke="#0C291B" stroke-width="2"/><circle cx="930" cy="682" r="6" fill="#2E7D57"><animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" begin="0.7s" repeatCount="indefinite"/></circle><text x="946" y="687" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="15" font-weight="600" fill="#728D7E">ENTREGAR</text>
+</g>
+<g clip-path="url(#scanClip)" opacity="0.58">
+  <rect x="22" y="32" width="1136" height="2" fill="url(#frame)" filter="url(#softGlow)">
+    <animate attributeName="y" from="58" to="726" dur="5.8s" repeatCount="indefinite"/>
+  </rect>
+</g>
+</svg>

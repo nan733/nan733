@@ -11,7 +11,7 @@ import os
 import re
 import urllib.error
 import urllib.request
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import date, datetime, time, timedelta, timezone
 from pathlib import Path
 
@@ -19,9 +19,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 ASSETS = ROOT / "assets"
 README = ROOT / "README.md"
+STATE = ASSETS / "contribution-stats.json"
 API_URL = "https://api.github.com/graphql"
 README_START = "<!-- contribution-stats:start -->"
 README_END = "<!-- contribution-stats:end -->"
+LAYOUT_VERSION = 2
 MONTHS = (
     "",
     "JAN",
@@ -177,7 +179,10 @@ def fetch_contributions(
         year_end = datetime.combine(date(year, 12, 31), time.max, timezone.utc)
         # Query the full signup year so GitHub includes the joined-account contribution.
         period_start = year_start
-        period_end = min(now, year_end)
+        # Contribution calendars are day-based; querying through today's end avoids
+        # transient partial-day replicas without counting activity that does not exist.
+        today_end = datetime.combine(now.date(), time.max, timezone.utc)
+        period_end = min(today_end, year_end)
         if period_start > period_end:
             continue
 
@@ -230,7 +235,7 @@ def current_streak(days: dict[date, int], joined: date, today: date) -> Streak:
     return Streak((anchor - start).days + 1, start, anchor)
 
 
-def build_stats(login: str, token: str, now: datetime) -> ContributionStats:
+def build_stats_once(login: str, token: str, now: datetime) -> ContributionStats:
     joined, days, total = fetch_contributions(login, token, now)
     today = now.date()
     active_days = [day for day, count in days.items() if count > 0 and day <= today]
@@ -242,6 +247,99 @@ def build_stats(login: str, token: str, now: datetime) -> ContributionStats:
         longest=longest_streak(days, joined, today),
         last_activity=max(active_days) if active_days else None,
         days=days,
+    )
+
+
+def build_stats(login: str, token: str, now: datetime) -> ContributionStats:
+    snapshots = [build_stats_once(login, token, now) for _ in range(3)]
+    return max(
+        snapshots,
+        key=lambda stats: (
+            stats.total,
+            stats.longest.count,
+            stats.current.count,
+            stats.last_activity or date.min,
+        ),
+    )
+
+
+def parse_streak(payload: dict) -> Streak:
+    return Streak(
+        count=int(payload["count"]),
+        start=date.fromisoformat(payload["start"]) if payload.get("start") else None,
+        end=date.fromisoformat(payload["end"]) if payload.get("end") else None,
+    )
+
+
+def reconcile_with_state(stats: ContributionStats, today: date) -> ContributionStats:
+    if not STATE.exists():
+        return stats
+    payload = json.loads(STATE.read_text(encoding="utf-8"))
+    if payload.get("login") != stats.login:
+        return stats
+
+    previous_total = int(payload.get("total", 0))
+    previous_longest = parse_streak(payload["longest"])
+    previous_current = parse_streak(payload["current"])
+    previous_last = (
+        date.fromisoformat(payload["last_activity"])
+        if payload.get("last_activity")
+        else None
+    )
+
+    longest = stats.longest
+    if previous_longest.count > longest.count:
+        longest = previous_longest
+
+    current = stats.current
+    if (
+        (
+            stats.total < previous_total
+            or (
+                previous_last is not None
+                and (stats.last_activity is None or previous_last > stats.last_activity)
+            )
+        )
+        and previous_current.end is not None
+        and previous_current.end >= today - timedelta(days=1)
+        and previous_current.count > current.count
+    ):
+        current = previous_current
+
+    last_activity = stats.last_activity
+    if previous_last is not None and (
+        last_activity is None or previous_last > last_activity
+    ):
+        last_activity = previous_last
+
+    return replace(
+        stats,
+        total=max(stats.total, previous_total),
+        current=current,
+        longest=longest,
+        last_activity=last_activity,
+    )
+
+
+def save_state(stats: ContributionStats) -> None:
+    def streak_payload(streak: Streak) -> dict[str, int | str | None]:
+        return {
+            "count": streak.count,
+            "start": streak.start.isoformat() if streak.start else None,
+            "end": streak.end.isoformat() if streak.end else None,
+        }
+
+    payload = {
+        "login": stats.login,
+        "total": stats.total,
+        "current": streak_payload(stats.current),
+        "longest": streak_payload(stats.longest),
+        "last_activity": (
+            stats.last_activity.isoformat() if stats.last_activity else None
+        ),
+    }
+    STATE.write_text(
+        json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
     )
 
 
@@ -270,38 +368,12 @@ def format_range(streak: Streak) -> str:
     return f"{format_date(streak.start)} - {format_date(streak.end)}"
 
 
-def recent_window(stats: ContributionStats, length: int = 48) -> list[tuple[date, int]]:
-    end = stats.last_activity or stats.joined
-    start = end - timedelta(days=length - 1)
-    return [(start + timedelta(days=index), stats.days.get(start + timedelta(days=index), 0)) for index in range(length)]
-
-
-def activity_color(count: int, theme: dict[str, str]) -> str:
-    if count == 0:
-        return theme["grid"]
-    if count == 1:
-        return theme["cyan"]
-    if count <= 3:
-        return theme["blue"]
-    if count <= 7:
-        return theme["green"]
-    return theme["violet"]
-
-
 def stats_svg(stats: ContributionStats, theme: dict[str, str]) -> str:
     mono = 'font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0"'
     label = f'{mono} font-size="11" font-weight="800" fill="{theme["cyan"]}"'
     muted = f'{mono} font-size="10" fill="{theme["muted"]}"'
-    number = f'{mono} font-size="54" font-weight="800" fill="{theme["ink"]}"'
-    recent = recent_window(stats)
-    cells = []
-    for index, (_, count) in enumerate(recent):
-        x = 370 + index * 16
-        color = activity_color(count, theme)
-        opacity = "0.58" if count == 0 else "1"
-        cells.append(
-            f'<rect x="{x}" y="286" width="11" height="11" rx="2" fill="{color}" opacity="{opacity}"/>'
-        )
+    total_number = f'{mono} font-size="60" font-weight="800" fill="{theme["blue"]}"'
+    longest_number = f'{mono} font-size="60" font-weight="800" fill="{theme["violet"]}"'
 
     total = html.escape(format_number(stats.total))
     current = html.escape(format_number(stats.current.count))
@@ -315,66 +387,67 @@ def stats_svg(stats: ContributionStats, theme: dict[str, str]) -> str:
         f"{stats.total} contribuições, sequência atual de {stats.current.count} dias e "
         f"maior sequência de {stats.longest.count} dias."
     )
+    circumference = 2 * 3.141592653589793 * 62
+    progress = 0 if stats.longest.count == 0 else min(stats.current.count / stats.longest.count, 1)
+    progress_length = circumference * progress
+    current_font_size = 52 if len(current) <= 2 else 42 if len(current) <= 3 else 32
 
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="330" viewBox="0 0 1180 330" role="img" aria-labelledby="title desc">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="310" viewBox="0 0 1180 310" role="img" aria-labelledby="title desc">
 <title id="title">Estatísticas de contribuições de {login}</title>
 <desc id="desc">{description}</desc>
 <defs>
   <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="{theme['cyan']}"/><stop offset="0.52" stop-color="{theme['blue']}"/><stop offset="1" stop-color="{theme['violet']}"/></linearGradient>
   <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="{theme['grid']}" opacity="0.42"/></pattern>
+  <radialGradient id="centerGlow" cx="50%" cy="40%" r="52%"><stop offset="0" stop-color="{theme['cyan']}" stop-opacity="0.13"/><stop offset="1" stop-color="{theme['bg']}" stop-opacity="0"/></radialGradient>
   <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs>
-<rect width="1180" height="330" rx="14" fill="{theme['bg']}"/>
-<rect width="1180" height="330" rx="14" fill="url(#grid)"/>
-<rect x="3" y="3" width="1174" height="324" rx="12" fill="none" stroke="url(#accent)" stroke-width="2"/>
+<rect width="1180" height="310" rx="14" fill="{theme['bg']}"/>
+<rect width="1180" height="310" rx="14" fill="url(#grid)"/>
+<rect width="1180" height="310" rx="14" fill="url(#centerGlow)"/>
+<rect x="3" y="3" width="1174" height="304" rx="12" fill="none" stroke="url(#accent)" stroke-width="2"/>
 <path d="M24 43H1156" stroke="{theme['grid']}"/>
 <text x="24" y="29" {label}>CONTRIBUIÇÕES.LOG // {login.upper()}</text>
 <text x="1156" y="29" text-anchor="end" {muted}>API OFICIAL // ÚLTIMA ATIVIDADE {last_activity}</text>
 
-<rect x="24" y="62" width="360" height="190" rx="8" fill="{theme['panel']}" stroke="{theme['grid']}"/>
-<rect x="24" y="62" width="360" height="3" rx="2" fill="{theme['cyan']}"/>
-<text x="43" y="91" {label}>01 // TOTAL.DE.CONTRIBUIÇÕES</text>
-<text x="43" y="158" {number}>{total}</text>
-<text x="43" y="184" {muted}>CONTRIBUIÇÕES REGISTRADAS</text>
-<path d="M43 206H348" stroke="{theme['grid']}"/>
-<text x="43" y="229" {muted}>CONTA DESDE // {joined}</text>
-<circle cx="333" cy="146" r="28" fill="none" stroke="{theme['cyan']}" opacity="0.18"/>
-<circle cx="333" cy="146" r="5" fill="{theme['cyan']}" filter="url(#glow)"><animate attributeName="opacity" values="0.45;1;0.45" dur="2.6s" repeatCount="indefinite"/></circle>
+<rect x="24" y="62" width="1132" height="202" rx="8" fill="{theme['panel']}" fill-opacity="0.88" stroke="{theme['grid']}"/>
+<path d="M402 82V244M778 82V244" stroke="{theme['muted']}" stroke-width="2" opacity="0.5"/>
 
-<rect x="410" y="62" width="360" height="190" rx="8" fill="{theme['panel']}" stroke="{theme['grid']}"/>
-<rect x="410" y="62" width="360" height="3" rx="2" fill="{theme['green']}"/>
-<text x="429" y="91" {label}>02 // SEQUÊNCIA.ATUAL</text>
-<text x="429" y="158" {number}>{current}</text>
-<text x="429" y="184" {muted}>DIAS CONSECUTIVOS</text>
-<path d="M429 206H734" stroke="{theme['grid']}"/>
-<text x="429" y="229" {muted}>{current_range}</text>
-<circle cx="719" cy="146" r="28" fill="none" stroke="{theme['green']}" opacity="0.18"/>
-<circle cx="719" cy="146" r="5" fill="{theme['green']}" filter="url(#glow)"><animate attributeName="r" values="4;7;4" dur="2.4s" repeatCount="indefinite"/></circle>
+<g text-anchor="middle">
+  <text x="213" y="91" {label}>TOTAL</text>
+  <text x="213" y="153" {total_number}>{total}</text>
+  <text x="213" y="181" {mono} font-size="13" font-weight="800" fill="{theme['ink']}">TOTAL DE CONTRIBUIÇÕES</text>
+  <text x="213" y="212" {muted}>{joined} - PRESENTE</text>
+  <path d="M115 230H311" stroke="{theme['blue']}" opacity="0.5"/>
 
-<rect x="796" y="62" width="360" height="190" rx="8" fill="{theme['panel']}" stroke="{theme['grid']}"/>
-<rect x="796" y="62" width="360" height="3" rx="2" fill="{theme['violet']}"/>
-<text x="815" y="91" {label}>03 // MAIOR.SEQUÊNCIA</text>
-<text x="815" y="158" {number}>{longest}</text>
-<text x="815" y="184" {muted}>DIAS CONSECUTIVOS</text>
-<path d="M815 206H1120" stroke="{theme['grid']}"/>
-<text x="815" y="229" {muted}>{longest_range}</text>
-<circle cx="1105" cy="146" r="28" fill="none" stroke="{theme['violet']}" opacity="0.18"/>
-<path d="M1097 146L1103 152L1114 139" fill="none" stroke="{theme['violet']}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="590" cy="130" r="62" fill="{theme['panel_alt']}" stroke="{theme['grid']}" stroke-width="10"/>
+  <circle cx="590" cy="130" r="62" fill="none" stroke="url(#accent)" stroke-width="10" stroke-linecap="round" stroke-dasharray="{progress_length:.1f} {circumference:.1f}" transform="rotate(-90 590 130)" filter="url(#glow)"/>
+  <circle cx="590" cy="68" r="8" fill="{theme['panel']}" stroke="{theme['cyan']}" stroke-width="2"/>
+  <circle cx="590" cy="68" r="3" fill="{theme['cyan']}" filter="url(#glow)"><animate attributeName="r" values="2.5;4;2.5" dur="2.2s" repeatCount="indefinite"/></circle>
+  <text x="590" y="148" {mono} font-size="{current_font_size}" font-weight="800" fill="{theme['ink']}">{current}</text>
+  <text x="590" y="221" {label}>SEQUÊNCIA ATUAL</text>
+  <text x="590" y="245" {muted}>{current_range}</text>
 
-<rect x="24" y="270" width="1132" height="42" rx="8" fill="{theme['panel_alt']}" stroke="{theme['grid']}"/>
-<text x="43" y="296" {label}>ATIVIDADE.RECENTE // 48 DIAS</text>
-{''.join(cells)}
+  <text x="967" y="91" {label}>RECORDE</text>
+  <text x="967" y="153" {longest_number}>{longest}</text>
+  <text x="967" y="181" {mono} font-size="13" font-weight="800" fill="{theme['ink']}">MAIOR SEQUÊNCIA</text>
+  <text x="967" y="212" {muted}>{longest_range}</text>
+  <path d="M869 230H1065" stroke="{theme['violet']}" opacity="0.5"/>
+</g>
+
+<circle cx="24" cy="287" r="4" fill="{theme['green']}" filter="url(#glow)"><animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" repeatCount="indefinite"/></circle>
+<text x="37" y="291" {muted}>STATUS // SINCRONIZADO</text>
+<text x="1156" y="291" text-anchor="end" {muted}>FONTE // GITHUB GRAPHQL</text>
 </svg>'''
 
 
 def fingerprint(stats: ContributionStats) -> str:
     payload = {
+        "layout": LAYOUT_VERSION,
         "joined": stats.joined.isoformat(),
         "total": stats.total,
         "current": [stats.current.count, str(stats.current.start), str(stats.current.end)],
         "longest": [stats.longest.count, str(stats.longest.start), str(stats.longest.end)],
         "last_activity": str(stats.last_activity),
-        "recent": [(str(day), count) for day, count in recent_window(stats)],
     }
     encoded = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode("utf-8")
     return hashlib.sha256(encoded).hexdigest()[:10]
@@ -397,6 +470,7 @@ def update_readme(digest: str) -> None:
 
 def write_assets(stats: ContributionStats) -> str:
     ASSETS.mkdir(exist_ok=True)
+    save_state(stats)
     digest = fingerprint(stats)
     expected = set()
     for name, theme in THEMES.items():
@@ -417,7 +491,8 @@ def main() -> None:
     token = os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_TOKEN")
     if not token:
         raise SystemExit("GITHUB_TOKEN or GH_TOKEN is required")
-    stats = build_stats(args.login, token, utc_now(args.now))
+    now = utc_now(args.now)
+    stats = reconcile_with_state(build_stats(args.login, token, now), now.date())
     digest = write_assets(stats)
     print(
         json.dumps(

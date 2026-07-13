@@ -23,7 +23,7 @@ STATE = ASSETS / "contribution-stats.json"
 API_URL = "https://api.github.com/graphql"
 README_START = "<!-- contribution-stats:start -->"
 README_END = "<!-- contribution-stats:end -->"
-LAYOUT_VERSION = 2
+LAYOUT_VERSION = 3
 MONTHS = (
     "",
     "JAN",
@@ -105,6 +105,7 @@ class Streak:
 class ContributionStats:
     login: str
     joined: date
+    first_activity: date | None
     total: int
     current: Streak
     longest: Streak
@@ -242,6 +243,7 @@ def build_stats_once(login: str, token: str, now: datetime) -> ContributionStats
     return ContributionStats(
         login=login,
         joined=joined,
+        first_activity=min(active_days) if active_days else None,
         total=total,
         current=current_streak(days, joined, today),
         longest=longest_streak(days, joined, today),
@@ -286,6 +288,11 @@ def reconcile_with_state(stats: ContributionStats, today: date) -> ContributionS
         if payload.get("last_activity")
         else None
     )
+    previous_first = (
+        date.fromisoformat(payload["first_activity"])
+        if payload.get("first_activity")
+        else None
+    )
 
     longest = stats.longest
     if previous_longest.count > longest.count:
@@ -312,8 +319,15 @@ def reconcile_with_state(stats: ContributionStats, today: date) -> ContributionS
     ):
         last_activity = previous_last
 
+    first_activity = stats.first_activity
+    if previous_first is not None and (
+        first_activity is None or previous_first < first_activity
+    ):
+        first_activity = previous_first
+
     return replace(
         stats,
+        first_activity=first_activity,
         total=max(stats.total, previous_total),
         current=current,
         longest=longest,
@@ -331,6 +345,9 @@ def save_state(stats: ContributionStats) -> None:
 
     payload = {
         "login": stats.login,
+        "first_activity": (
+            stats.first_activity.isoformat() if stats.first_activity else None
+        ),
         "total": stats.total,
         "current": streak_payload(stats.current),
         "longest": streak_payload(stats.longest),
@@ -378,7 +395,7 @@ def stats_svg(stats: ContributionStats, theme: dict[str, str]) -> str:
     total = html.escape(format_number(stats.total))
     current = html.escape(format_number(stats.current.count))
     longest = html.escape(format_number(stats.longest.count))
-    joined = html.escape(format_date(stats.joined))
+    first_activity = html.escape(format_date(stats.first_activity))
     current_range = html.escape(format_range(stats.current))
     longest_range = html.escape(format_range(stats.longest))
     last_activity = html.escape(format_date(stats.last_activity))
@@ -416,13 +433,13 @@ def stats_svg(stats: ContributionStats, theme: dict[str, str]) -> str:
   <text x="213" y="91" {label}>TOTAL</text>
   <text x="213" y="153" {total_number}>{total}</text>
   <text x="213" y="181" {mono} font-size="13" font-weight="800" fill="{theme['ink']}">TOTAL DE CONTRIBUIÇÕES</text>
-  <text x="213" y="212" {muted}>{joined} - PRESENTE</text>
+  <text x="213" y="212" {muted}>{first_activity} - PRESENTE</text>
   <path d="M115 230H311" stroke="{theme['blue']}" opacity="0.5"/>
 
   <circle cx="590" cy="130" r="62" fill="{theme['panel_alt']}" stroke="{theme['grid']}" stroke-width="10"/>
   <circle cx="590" cy="130" r="62" fill="none" stroke="url(#accent)" stroke-width="10" stroke-linecap="round" stroke-dasharray="{progress_length:.1f} {circumference:.1f}" transform="rotate(-90 590 130)" filter="url(#glow)"/>
-  <circle cx="590" cy="68" r="8" fill="{theme['panel']}" stroke="{theme['cyan']}" stroke-width="2"/>
-  <circle cx="590" cy="68" r="3" fill="{theme['cyan']}" filter="url(#glow)"><animate attributeName="r" values="2.5;4;2.5" dur="2.2s" repeatCount="indefinite"/></circle>
+  <path d="M590 42C590 42 604 55 604 65C604 74 598 80 590 80C582 80 576 74 576 66C576 58 581 54 585 49C585 54 587 58 591 60C595 55 594 49 590 42Z" fill="{theme['panel']}" stroke="{theme['cyan']}" stroke-width="3" stroke-linejoin="round" filter="url(#glow)"/>
+  <path d="M590 60C595 64 597 69 594 73C592 77 587 77 585 73C583 69 586 65 590 60Z" fill="{theme['cyan']}"><animate attributeName="opacity" values="0.55;1;0.55" dur="1.8s" repeatCount="indefinite"/></path>
   <text x="590" y="148" {mono} font-size="{current_font_size}" font-weight="800" fill="{theme['ink']}">{current}</text>
   <text x="590" y="221" {label}>SEQUÊNCIA ATUAL</text>
   <text x="590" y="245" {muted}>{current_range}</text>
@@ -444,6 +461,7 @@ def fingerprint(stats: ContributionStats) -> str:
     payload = {
         "layout": LAYOUT_VERSION,
         "joined": stats.joined.isoformat(),
+        "first_activity": str(stats.first_activity),
         "total": stats.total,
         "current": [stats.current.count, str(stats.current.start), str(stats.current.end)],
         "longest": [stats.longest.count, str(stats.longest.start), str(stats.longest.end)],
@@ -457,7 +475,7 @@ def update_readme(digest: str) -> None:
     block = f'''{README_START}
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nan733/nan733/main/assets/contributions-{digest}-dark.svg">
-  <img width="100%" alt="Total de contribuições e sequências de nandek" src="https://raw.githubusercontent.com/nan733/nan733/main/assets/contributions-{digest}-light.svg">
+  <img width="100%" alt="Total de contribuições e sequências de Renan Oliveira" src="https://raw.githubusercontent.com/nan733/nan733/main/assets/contributions-{digest}-light.svg">
 </picture>
 {README_END}'''
     content = README.read_text(encoding="utf-8")

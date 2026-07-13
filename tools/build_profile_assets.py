@@ -139,7 +139,6 @@ def hero_svg(theme: dict[str, str]) -> str:
   <rect x="3" y="3" width="1174" height="614" rx="14" fill="none" stroke="url(#frame)" stroke-width="2"/>
   <path d="M3 43H1177" stroke="{theme['grid']}"/>
   <circle cx="23" cy="23" r="5" fill="#F43F5E"/><circle cx="41" cy="23" r="5" fill="#F59E0B"/><circle cx="59" cy="23" r="5" fill="{theme['green']}"/>
-  <text x="590" y="27" text-anchor="middle" {tiny}>nan733@devgrid ~ % ./perfil --seguro --ao-vivo</text>
   <circle cx="1097" cy="22" r="4" fill="{theme['green']}" filter="url(#softGlow)"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.4s" repeatCount="indefinite"/></circle>
   <text x="1110" y="26" {mono} font-size="10" fill="{theme['green']}">ATIVO</text>
 
@@ -150,14 +149,14 @@ def hero_svg(theme: dict[str, str]) -> str:
   <text {portrait}>{ascii_tspans()}</text>
   <rect x="38" y="529" width="388" height="1" fill="url(#frame)" opacity="0.65"/>
   <text x="38" y="547" {tiny}>ASSINATURA VISUAL</text>
-  <text x="176" y="547" {mono} font-size="12" font-weight="600" fill="{theme['green']}">NANDEK.01 // VERIFICADO</text>
+  <text x="176" y="547" {mono} font-size="12" font-weight="600" fill="{theme['green']}">RENAN.OLIVEIRA // VERIFICADO</text>
 
   <rect x="462" y="62" width="696" height="496" rx="12" fill="{theme['panel']}" fill-opacity="0.84" stroke="{theme['grid']}"/>
   <path d="M462 91H1158" stroke="{theme['grid']}"/>
   <text x="478" y="81" {label}>PERFIL.OS</text>
   <text x="1140" y="81" text-anchor="end" {tiny}>VERSÃO 2026.07 // PT-BR</text>
 
-  <text x="484" y="128" {mono} font-size="25" font-weight="800" fill="{theme['ink']}">nan733 <tspan fill="{theme['muted']}">//</tspan> <tspan fill="{theme['cyan']}">nandek</tspan></text>
+  <text x="484" y="128" {mono} font-size="25" font-weight="800" fill="{theme['ink']}">nan733 <tspan fill="{theme['muted']}">//</tspan> <tspan fill="{theme['cyan']}">Renan Oliveira</tspan></text>
   <rect x="484" y="142" width="650" height="2" fill="url(#frame)" opacity="0.72"/>
 
   <text x="484" y="174" {key}>IDENTIDADE</text><text x="620" y="174" {value}>desenvolvedor em evolução constante</text>
@@ -198,19 +197,19 @@ def mission_svg(theme: dict[str, str]) -> str:
     head = f'{mono} font-size="18" font-weight="800" fill="{theme["ink"]}"'
     body = f'{mono} font-size="11" fill="{theme["muted"]}"'
     strong = f'{mono} font-size="11" font-weight="700" fill="{theme["ink"]}"'
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="410" viewBox="0 0 1180 410" role="img" aria-labelledby="title desc">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="210" viewBox="0 0 1180 210" role="img" aria-labelledby="title desc">
 <title id="title">Central de missão de nan733</title>
-<desc id="desc">Foco profissional, objetivos de estudo, princípios de desenvolvimento, fluxo de entrega e estado de segurança.</desc>
+<desc id="desc">Foco profissional, objetivos de estudo e princípios de desenvolvimento.</desc>
 <defs>
   <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="{theme['cyan']}"/><stop offset="0.52" stop-color="{theme['blue']}"/><stop offset="1" stop-color="{theme['violet']}"/></linearGradient>
   <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="{theme['grid']}" opacity="0.42"/></pattern>
   <filter id="glow" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
 </defs>
-<rect width="1180" height="410" rx="14" fill="{theme['bg']}"/>
-<rect width="1180" height="410" rx="14" fill="url(#grid)"/>
-<rect x="3" y="3" width="1174" height="404" rx="12" fill="none" stroke="url(#accent)" stroke-width="2"/>
+<rect width="1180" height="210" rx="14" fill="{theme['bg']}"/>
+<rect width="1180" height="210" rx="14" fill="url(#grid)"/>
+<rect x="3" y="3" width="1174" height="204" rx="12" fill="none" stroke="url(#accent)" stroke-width="2"/>
 <text x="24" y="31" {title}>CENTRAL.DE.MISSÃO</text>
-<text x="1156" y="31" text-anchor="end" {body}>SISTEMAS ATIVOS // 04</text>
+<text x="1156" y="31" text-anchor="end" {body}>MÓDULOS // 03</text>
 <path d="M24 43H1156" stroke="{theme['grid']}"/>
 
 <rect x="24" y="62" width="360" height="126" rx="8" fill="{theme['panel']}" stroke="{theme['grid']}"/>
@@ -233,35 +232,14 @@ def mission_svg(theme: dict[str, str]) -> str:
 <text x="815" y="140" {strong}>claro antes de complexo</text>
 <text x="815" y="164" {strong}>seguro por padrão</text>
 <circle cx="1126" cy="112" r="5" fill="{theme['violet']}"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.2s" begin="0.5s" repeatCount="indefinite"/></circle>
-
-<rect x="24" y="212" width="1132" height="108" rx="8" fill="{theme['panel']}" stroke="{theme['grid']}"/>
-<text x="43" y="238" {title}>FLUXO.DE.ENTREGA</text>
-<path d="M105 279H1072" stroke="{theme['grid']}" stroke-width="3"/>
-<path d="M105 279H886" stroke="url(#accent)" stroke-width="3" stroke-dasharray="10 8"><animate attributeName="stroke-dashoffset" values="36;0" dur="2.2s" repeatCount="indefinite"/></path>
-<g {strong} text-anchor="middle">
-  <circle cx="105" cy="279" r="10" fill="{theme['cyan']}" filter="url(#glow)"/><text x="105" y="307">IDEIA</text>
-  <circle cx="347" cy="279" r="10" fill="{theme['blue']}" filter="url(#glow)"/><text x="347" y="307">REACT + VITE</text>
-  <circle cx="589" cy="279" r="10" fill="{theme['green']}" filter="url(#glow)"/><text x="589" y="307">PYTHON API</text>
-  <circle cx="831" cy="279" r="10" fill="{theme['violet']}" filter="url(#glow)"/><text x="831" y="307">SQLITE / TURSO</text>
-  <circle cx="1072" cy="279" r="10" fill="{theme['muted']}"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.2s" repeatCount="indefinite"/></circle><text x="1072" y="307">RESULTADO</text>
-</g>
-
-<rect x="24" y="344" width="1132" height="42" rx="8" fill="{theme['panel_alt']}" stroke="{theme['grid']}"/>
-<text x="43" y="370" {title}>VERIFICAÇÃO.DE.SEGURANÇA</text>
-<g {strong}>
-  <circle cx="308" cy="365" r="5" fill="{theme['green']}"/><text x="322" y="369">ARQUIVOS LOCAIS</text>
-  <circle cx="532" cy="365" r="5" fill="{theme['green']}"/><text x="546" y="369">SEM JAVASCRIPT</text>
-  <circle cx="758" cy="365" r="5" fill="{theme['green']}"/><text x="772" y="369">SEM TOKENS</text>
-  <circle cx="928" cy="365" r="5" fill="{theme['green']}"/><text x="942" y="369">SEM RASTREADORES</text>
-</g>
 </svg>'''
 
 
 def main() -> None:
     ASSETS.mkdir(exist_ok=True)
     for name, theme in THEMES.items():
-        (ASSETS / f"profile-v2-{name}.svg").write_text(hero_svg(theme), encoding="utf-8")
-        (ASSETS / f"mission-control-v2-{name}.svg").write_text(
+        (ASSETS / f"profile-v3-{name}.svg").write_text(hero_svg(theme), encoding="utf-8")
+        (ASSETS / f"mission-control-v3-{name}.svg").write_text(
             mission_svg(theme), encoding="utf-8"
         )
 

@@ -22,13 +22,13 @@
   <text x="213" y="91" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="800" fill="#22D3EE">TOTAL</text>
   <text x="213" y="153" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="60" font-weight="800" fill="#60A5FA">124</text>
   <text x="213" y="181" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="13" font-weight="800" fill="#DCE8F5">TOTAL DE CONTRIBUIÇÕES</text>
-  <text x="213" y="212" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">11 JUN 2025 - PRESENTE</text>
+  <text x="213" y="212" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">10 JUN 2025 - PRESENTE</text>
   <path d="M115 230H311" stroke="#60A5FA" opacity="0.5"/>
 
   <circle cx="590" cy="130" r="62" fill="#0E1728" stroke="#172337" stroke-width="10"/>
   <circle cx="590" cy="130" r="62" fill="none" stroke="url(#accent)" stroke-width="10" stroke-linecap="round" stroke-dasharray="389.6 389.6" transform="rotate(-90 590 130)" filter="url(#glow)"/>
-  <circle cx="590" cy="68" r="8" fill="#0B1220" stroke="#22D3EE" stroke-width="2"/>
-  <circle cx="590" cy="68" r="3" fill="#22D3EE" filter="url(#glow)"><animate attributeName="r" values="2.5;4;2.5" dur="2.2s" repeatCount="indefinite"/></circle>
+  <path d="M590 42C590 42 604 55 604 65C604 74 598 80 590 80C582 80 576 74 576 66C576 58 581 54 585 49C585 54 587 58 591 60C595 55 594 49 590 42Z" fill="#0B1220" stroke="#22D3EE" stroke-width="3" stroke-linejoin="round" filter="url(#glow)"/>
+  <path d="M590 60C595 64 597 69 594 73C592 77 587 77 585 73C583 69 586 65 590 60Z" fill="#22D3EE"><animate attributeName="opacity" values="0.55;1;0.55" dur="1.8s" repeatCount="indefinite"/></path>
   <text x="590" y="148" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="52" font-weight="800" fill="#DCE8F5">6</text>
   <text x="590" y="221" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="800" fill="#22D3EE">SEQUÊNCIA ATUAL</text>
   <text x="590" y="245" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">08 - 13 JUL 2026</text>

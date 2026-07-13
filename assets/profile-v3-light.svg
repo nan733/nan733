@@ -33,7 +33,6 @@
   <rect x="3" y="3" width="1174" height="614" rx="14" fill="none" stroke="url(#frame)" stroke-width="2"/>
   <path d="M3 43H1177" stroke="#DCE7F1"/>
   <circle cx="23" cy="23" r="5" fill="#F43F5E"/><circle cx="41" cy="23" r="5" fill="#F59E0B"/><circle cx="59" cy="23" r="5" fill="#0F766E"/>
-  <text x="590" y="27" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#64748B">nan733@devgrid ~ % ./perfil --seguro --ao-vivo</text>
   <circle cx="1097" cy="22" r="4" fill="#0F766E" filter="url(#softGlow)"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.4s" repeatCount="indefinite"/></circle>
   <text x="1110" y="26" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#0F766E">ATIVO</text>
 
@@ -91,14 +90,14 @@
 <tspan x="42" y="535.4" xml:space="preserve">           -====.=%%##%%%++++==++++*+++++*******##*         </tspan></text>
   <rect x="38" y="529" width="388" height="1" fill="url(#frame)" opacity="0.65"/>
   <text x="38" y="547" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#64748B">ASSINATURA VISUAL</text>
-  <text x="176" y="547" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="12" font-weight="600" fill="#0F766E">NANDEK.01 // VERIFICADO</text>
+  <text x="176" y="547" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="12" font-weight="600" fill="#0F766E">RENAN.OLIVEIRA // VERIFICADO</text>
 
   <rect x="462" y="62" width="696" height="496" rx="12" fill="#FFFFFF" fill-opacity="0.84" stroke="#DCE7F1"/>
   <path d="M462 91H1158" stroke="#DCE7F1"/>
   <text x="478" y="81" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#0891B2">PERFIL.OS</text>
   <text x="1140" y="81" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#64748B">VERSÃO 2026.07 // PT-BR</text>
 
-  <text x="484" y="128" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="25" font-weight="800" fill="#172033">nan733 <tspan fill="#64748B">//</tspan> <tspan fill="#0891B2">nandek</tspan></text>
+  <text x="484" y="128" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="25" font-weight="800" fill="#172033">nan733 <tspan fill="#64748B">//</tspan> <tspan fill="#0891B2">Renan Oliveira</tspan></text>
   <rect x="484" y="142" width="650" height="2" fill="url(#frame)" opacity="0.72"/>
 
   <text x="484" y="174" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#64748B">IDENTIDADE</text><text x="620" y="174" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="12" font-weight="600" fill="#172033">desenvolvedor em evolução constante</text>

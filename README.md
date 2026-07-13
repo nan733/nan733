@@ -1,15 +1,15 @@
 <a href="https://github.com/nan733">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nan733/nan733/main/assets/profile-dark.svg">
-    <img width="100%" alt="Painel de perfil premium de nandek" src="https://raw.githubusercontent.com/nan733/nan733/main/assets/profile-light.svg">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nan733/nan733/main/assets/profile-v2-dark.svg">
+    <img width="100%" alt="Painel de perfil premium de nandek" src="https://raw.githubusercontent.com/nan733/nan733/main/assets/profile-v2-light.svg">
   </picture>
 </a>
 
 <br>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nan733/nan733/main/assets/mission-control-dark.svg">
-  <img width="100%" alt="Painel de foco, stack e seguranca de nandek" src="https://raw.githubusercontent.com/nan733/nan733/main/assets/mission-control-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nan733/nan733/main/assets/mission-control-v2-dark.svg">
+  <img width="100%" alt="Painel de foco, stack e seguranca de nandek" src="https://raw.githubusercontent.com/nan733/nan733/main/assets/mission-control-v2-light.svg">
 </picture>
 
 <details>

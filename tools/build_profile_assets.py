@@ -260,8 +260,8 @@ def mission_svg(theme: dict[str, str]) -> str:
 def main() -> None:
     ASSETS.mkdir(exist_ok=True)
     for name, theme in THEMES.items():
-        (ASSETS / f"profile-{name}.svg").write_text(hero_svg(theme), encoding="utf-8")
-        (ASSETS / f"mission-control-{name}.svg").write_text(
+        (ASSETS / f"profile-v2-{name}.svg").write_text(hero_svg(theme), encoding="utf-8")
+        (ASSETS / f"mission-control-v2-{name}.svg").write_text(
             mission_svg(theme), encoding="utf-8"
         )
 

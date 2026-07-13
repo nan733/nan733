@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1180" height="620" viewBox="0 0 1180 620" role="img" aria-labelledby="title desc">
-<title id="title">nan733 developer profile control panel</title>
-<desc id="desc">Animated terminal interface with an ASCII portrait, development stack and current project.</desc>
+<title id="title">Painel de perfil do desenvolvedor nan733</title>
+<desc id="desc">Interface de terminal animada com retrato ASCII, stack de desenvolvimento e projeto atual.</desc>
 <defs>
   <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0" stop-color="#A78BFA"><animate attributeName="stop-color" values="#A78BFA;#22D3EE;#2DD4BF;#A78BFA" dur="10s" repeatCount="indefinite"/></stop>
@@ -33,14 +33,14 @@
   <rect x="3" y="3" width="1174" height="614" rx="14" fill="none" stroke="url(#frame)" stroke-width="2"/>
   <path d="M3 43H1177" stroke="#172337"/>
   <circle cx="23" cy="23" r="5" fill="#F43F5E"/><circle cx="41" cy="23" r="5" fill="#F59E0B"/><circle cx="59" cy="23" r="5" fill="#2DD4BF"/>
-  <text x="590" y="27" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">nan733@devgrid ~ % ./profile --secure --live</text>
+  <text x="590" y="27" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">nan733@devgrid ~ % ./perfil --seguro --ao-vivo</text>
   <circle cx="1097" cy="22" r="4" fill="#2DD4BF" filter="url(#softGlow)"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.4s" repeatCount="indefinite"/></circle>
-  <text x="1110" y="26" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#2DD4BF">ONLINE</text>
+  <text x="1110" y="26" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#2DD4BF">ATIVO</text>
 
   <rect x="22" y="62" width="420" height="496" rx="12" fill="#0B1220" fill-opacity="0.84" stroke="#172337"/>
   <path d="M22 91H442" stroke="#172337"/>
-  <text x="38" y="81" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#22D3EE">IDENTITY.SCAN</text>
-  <text x="425" y="81" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">SOURCE // PUBLIC AVATAR</text>
+  <text x="38" y="81" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#22D3EE">IDENTIDADE.SCAN</text>
+  <text x="425" y="81" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">FONTE // AVATAR PÚBLICO</text>
   <text font-family="Consolas, Courier New, monospace" font-size="7.6" fill="url(#portrait)"><tspan x="42" y="103.0" xml:space="preserve">                                                             </tspan>
 <tspan x="42" y="112.2" xml:space="preserve">                             =*##%%#####.-                  </tspan>
 <tspan x="42" y="121.4" xml:space="preserve">                            +++*#####*****:                 </tspan>
@@ -90,39 +90,39 @@
 <tspan x="42" y="526.2" xml:space="preserve">          .=====.:=%%%%%%#++++++**+**+++*********#+ -       </tspan>
 <tspan x="42" y="535.4" xml:space="preserve">           -====.=%%##%%%++++==++++*+++++*******##*         </tspan></text>
   <rect x="38" y="529" width="388" height="1" fill="url(#frame)" opacity="0.65"/>
-  <text x="38" y="547" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">VISUAL HASH</text>
-  <text x="135" y="547" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="12" font-weight="600" fill="#2DD4BF">NANDEK.01 // VERIFIED</text>
+  <text x="38" y="547" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">ASSINATURA VISUAL</text>
+  <text x="176" y="547" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="12" font-weight="600" fill="#2DD4BF">NANDEK.01 // VERIFICADO</text>
 
   <rect x="462" y="62" width="696" height="496" rx="12" fill="#0B1220" fill-opacity="0.84" stroke="#172337"/>
   <path d="M462 91H1158" stroke="#172337"/>
-  <text x="478" y="81" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#22D3EE">PROFILE.OS</text>
-  <text x="1140" y="81" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">BUILD 2026.07 // PT-BR</text>
+  <text x="478" y="81" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#22D3EE">PERFIL.OS</text>
+  <text x="1140" y="81" text-anchor="end" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">VERSÃO 2026.07 // PT-BR</text>
 
   <text x="484" y="128" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="25" font-weight="800" fill="#DCE8F5">nan733 <tspan fill="#7E93AA">//</tspan> <tspan fill="#22D3EE">nandek</tspan></text>
   <rect x="484" y="142" width="650" height="2" fill="url(#frame)" opacity="0.72"/>
 
-  <text x="484" y="174" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#7E93AA">IDENTITY</text><text x="620" y="174" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="12" font-weight="600" fill="#DCE8F5">developer in constant evolution</text>
-  <text x="484" y="199" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#7E93AA">ROLE</text><text x="620" y="199" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="12" font-weight="600" fill="#DCE8F5">full-stack developer in training</text>
-  <text x="484" y="224" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#7E93AA">MODE</text><text x="620" y="224" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="12" font-weight="600" fill="#DCE8F5">building / learning / shipping</text>
-  <text x="484" y="249" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#7E93AA">FOCUS</text><text x="620" y="249" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="12" font-weight="600" fill="#DCE8F5">web apps / dashboards / automation</text>
+  <text x="484" y="174" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#7E93AA">IDENTIDADE</text><text x="620" y="174" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="12" font-weight="600" fill="#DCE8F5">desenvolvedor em evolução constante</text>
+  <text x="484" y="199" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#7E93AA">FUNÇÃO</text><text x="620" y="199" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="12" font-weight="600" fill="#DCE8F5">desenvolvedor full-stack em formação</text>
+  <text x="484" y="224" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#7E93AA">MODO</text><text x="620" y="224" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="12" font-weight="600" fill="#DCE8F5">construindo / aprendendo / entregando</text>
+  <text x="484" y="249" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#7E93AA">FOCO</text><text x="620" y="249" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="12" font-weight="600" fill="#DCE8F5">apps web / dashboards / automação</text>
 
-  <text x="484" y="290" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#22D3EE">RUNTIME.STACK</text>
+  <text x="484" y="290" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#22D3EE">STACK.ATUAL</text>
   <path d="M484 300H1134" stroke="#172337"/>
   <text x="484" y="325" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#7E93AA">FRONTEND</text><text x="620" y="325" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="12" font-weight="600" fill="#DCE8F5">React 19 / Vite / JavaScript</text>
   <text x="484" y="350" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#7E93AA">BACKEND</text><text x="620" y="350" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="12" font-weight="600" fill="#DCE8F5">Python / APIs / SQLite / Turso</text>
   <text x="484" y="375" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#7E93AA">VISUAL</text><text x="620" y="375" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="12" font-weight="600" fill="#DCE8F5">Recharts / Motion / Three.js</text>
 
   <rect x="484" y="398" width="650" height="82" rx="8" fill="#0E1728" stroke="#172337"/>
-  <text x="501" y="420" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#22D3EE">ACTIVE.BUILD</text>
+  <text x="501" y="420" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#22D3EE">PROJETO.ATIVO</text>
   <text x="501" y="446" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="17" font-weight="800" fill="#DCE8F5">Controle Financeiro</text>
-  <text x="501" y="466" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">private dashboard // income // expenses // goals // projections</text>
+  <text x="501" y="466" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">painel privado // rendas // gastos // metas // projeções</text>
   <circle cx="1108" cy="438" r="9" fill="none" stroke="#2DD4BF" opacity="0.38"/>
   <circle cx="1108" cy="438" r="4" fill="#2DD4BF"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.4s" repeatCount="indefinite"/></circle>
 
   <rect x="484" y="500" width="650" height="38" rx="7" fill="#0E1728" stroke="#172337"/>
-  <circle cx="505" cy="519" r="5" fill="#22D3EE"><animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" repeatCount="indefinite"/></circle><text x="518" y="523" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">BUILD</text>
-  <path d="M575 519H681" stroke="#172337" stroke-width="2"/><circle cx="699" cy="519" r="5" fill="#60A5FA"><animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" begin="0.35s" repeatCount="indefinite"/></circle><text x="712" y="523" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">LEARN</text>
-  <path d="M773 519H899" stroke="#172337" stroke-width="2"/><circle cx="917" cy="519" r="5" fill="#A78BFA"><animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" begin="0.7s" repeatCount="indefinite"/></circle><text x="930" y="523" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">SHIP</text>
+  <circle cx="505" cy="519" r="5" fill="#22D3EE"><animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" repeatCount="indefinite"/></circle><text x="518" y="523" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">CRIAR</text>
+  <path d="M575 519H681" stroke="#172337" stroke-width="2"/><circle cx="699" cy="519" r="5" fill="#60A5FA"><animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" begin="0.35s" repeatCount="indefinite"/></circle><text x="712" y="523" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">APRENDER</text>
+  <path d="M793 519H899" stroke="#172337" stroke-width="2"/><circle cx="917" cy="519" r="5" fill="#A78BFA"><animate attributeName="opacity" values="0.45;1;0.45" dur="2.4s" begin="0.7s" repeatCount="indefinite"/></circle><text x="930" y="523" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">ENTREGAR</text>
   <rect x="1098" y="509" width="8" height="18" fill="#2DD4BF"><animate attributeName="opacity" values="1;1;0;0" dur="1s" repeatCount="indefinite"/></rect>
 </g>
 <g clip-path="url(#scanClip)" opacity="0.58">

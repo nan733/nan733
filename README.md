@@ -13,25 +13,25 @@
 </picture>
 
 <details>
-  <summary><strong>PROFILE.MANIFEST // versao em texto</strong></summary>
+  <summary><strong>MANIFESTO.DO.PERFIL // versão em texto</strong></summary>
 
   ### Sobre
 
-  Sou o **nandek**, desenvolvedor em formacao com foco em aplicacoes web, dashboards, automacoes e produtos que resolvem problemas reais.
+  Sou o **nandek**, desenvolvedor em formação com foco em aplicações web, dashboards, automações e produtos que resolvem problemas reais.
 
   ### Stack atual
 
   `JavaScript` · `React` · `Vite` · `Python` · `HTML` · `CSS` · `SQLite` · `Turso` · `Git`
 
-  ### Em construcao
+  ### Em construção
 
-  **Controle Financeiro** — painel privado para organizar saldo, rendas, gastos, mensalidades, metas, cartao de credito e projecoes.
+  **Controle Financeiro** — painel privado para organizar saldo, rendas, gastos, mensalidades, metas, cartão de crédito e projeções.
 
   ### Principios
 
-  - Util antes de chamativo.
+  - Útil antes de chamativo.
   - Claro antes de complexo.
-  - Seguro desde o inicio.
+  - Seguro desde o início.
 </details>
 
 <p align="center">

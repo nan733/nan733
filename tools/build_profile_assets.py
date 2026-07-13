@@ -106,7 +106,7 @@ def hero_svg(theme: dict[str, str]) -> str:
     portrait = 'font-family="Consolas, Courier New, monospace" font-size="7.6" fill="url(#portrait)"'
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="620" viewBox="0 0 1180 620" role="img" aria-labelledby="title desc">
 <title id="title">Painel de perfil do desenvolvedor nan733</title>
-<desc id="desc">Interface de terminal animada com retrato ASCII, stack de desenvolvimento e projeto atual.</desc>
+<desc id="desc">Interface de terminal animada com retrato ASCII, stack de desenvolvimento e foco profissional.</desc>
 <defs>
   <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0" stop-color="{theme['violet']}"><animate attributeName="stop-color" values="{theme['violet']};{theme['cyan']};{theme['green']};{theme['violet']}" dur="10s" repeatCount="indefinite"/></stop>
@@ -172,9 +172,9 @@ def hero_svg(theme: dict[str, str]) -> str:
   <text x="484" y="375" {key}>VISUAL</text><text x="620" y="375" {value}>Recharts / Motion / Three.js</text>
 
   <rect x="484" y="398" width="650" height="82" rx="8" fill="{theme['panel_alt']}" stroke="{theme['grid']}"/>
-  <text x="501" y="420" {label}>PROJETO.ATIVO</text>
-  <text x="501" y="446" {mono} font-size="17" font-weight="800" fill="{theme['ink']}">Controle Financeiro</text>
-  <text x="501" y="466" {tiny}>painel privado // rendas // gastos // metas // projeções</text>
+  <text x="501" y="420" {label}>DIREÇÃO.ATUAL</text>
+  <text x="501" y="446" {mono} font-size="17" font-weight="800" fill="{theme['ink']}">Evolução Full-Stack</text>
+  <text x="501" y="466" {tiny}>interfaces // APIs // dados // automação</text>
   <circle cx="1108" cy="438" r="9" fill="none" stroke="{theme['green']}" opacity="0.38"/>
   <circle cx="1108" cy="438" r="4" fill="{theme['green']}"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.4s" repeatCount="indefinite"/></circle>
 
@@ -200,7 +200,7 @@ def mission_svg(theme: dict[str, str]) -> str:
     strong = f'{mono} font-size="11" font-weight="700" fill="{theme["ink"]}"'
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="410" viewBox="0 0 1180 410" role="img" aria-labelledby="title desc">
 <title id="title">Central de missão de nan733</title>
-<desc id="desc">Projeto atual, objetivos de estudo, princípios de desenvolvimento, fluxo de entrega e estado de segurança.</desc>
+<desc id="desc">Foco profissional, objetivos de estudo, princípios de desenvolvimento, fluxo de entrega e estado de segurança.</desc>
 <defs>
   <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="{theme['cyan']}"/><stop offset="0.52" stop-color="{theme['blue']}"/><stop offset="1" stop-color="{theme['violet']}"/></linearGradient>
   <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="{theme['grid']}" opacity="0.42"/></pattern>
@@ -214,10 +214,10 @@ def mission_svg(theme: dict[str, str]) -> str:
 <path d="M24 43H1156" stroke="{theme['grid']}"/>
 
 <rect x="24" y="62" width="360" height="126" rx="8" fill="{theme['panel']}" stroke="{theme['grid']}"/>
-<text x="43" y="86" {title}>01 // PROJETO.ATIVO</text>
-<text x="43" y="116" {head}>Controle Financeiro</text>
-<text x="43" y="140" {body}>painel com React + Vite</text>
-<text x="43" y="160" {body}>modelagem de dados + gráficos úteis</text>
+<text x="43" y="86" {title}>01 // FOCO.ATUAL</text>
+<text x="43" y="116" {head}>Desenvolvimento Full-Stack</text>
+<text x="43" y="140" {body}>interfaces web responsivas</text>
+<text x="43" y="160" {body}>APIs + dados + visualizações</text>
 <rect x="43" y="174" width="286" height="3" rx="2" fill="{theme['grid']}"/><rect x="43" y="174" width="196" height="3" rx="2" fill="{theme['green']}"><animate attributeName="width" values="150;196;182;196" dur="4s" repeatCount="indefinite"/></rect>
 
 <rect x="410" y="62" width="360" height="126" rx="8" fill="{theme['panel']}" stroke="{theme['grid']}"/>

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1180" height="620" viewBox="0 0 1180 620" role="img" aria-labelledby="title desc">
 <title id="title">Painel de perfil do desenvolvedor nan733</title>
-<desc id="desc">Interface de terminal animada com retrato ASCII, stack de desenvolvimento e projeto atual.</desc>
+<desc id="desc">Interface de terminal animada com retrato ASCII, stack de desenvolvimento e foco profissional.</desc>
 <defs>
   <linearGradient id="frame" x1="0" y1="0" x2="1" y2="1">
     <stop offset="0" stop-color="#A78BFA"><animate attributeName="stop-color" values="#A78BFA;#22D3EE;#2DD4BF;#A78BFA" dur="10s" repeatCount="indefinite"/></stop>
@@ -113,9 +113,9 @@
   <text x="484" y="375" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#7E93AA">VISUAL</text><text x="620" y="375" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="12" font-weight="600" fill="#DCE8F5">Recharts / Motion / Three.js</text>
 
   <rect x="484" y="398" width="650" height="82" rx="8" fill="#0E1728" stroke="#172337"/>
-  <text x="501" y="420" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#22D3EE">PROJETO.ATIVO</text>
-  <text x="501" y="446" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="17" font-weight="800" fill="#DCE8F5">Controle Financeiro</text>
-  <text x="501" y="466" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">painel privado // rendas // gastos // metas // projeções</text>
+  <text x="501" y="420" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="11" font-weight="700" fill="#22D3EE">DIREÇÃO.ATUAL</text>
+  <text x="501" y="446" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="17" font-weight="800" fill="#DCE8F5">Evolução Full-Stack</text>
+  <text x="501" y="466" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="10" fill="#7E93AA">interfaces // APIs // dados // automação</text>
   <circle cx="1108" cy="438" r="9" fill="none" stroke="#2DD4BF" opacity="0.38"/>
   <circle cx="1108" cy="438" r="4" fill="#2DD4BF"><animate attributeName="opacity" values="0.4;1;0.4" dur="2.4s" repeatCount="indefinite"/></circle>
 

@@ -23,10 +23,6 @@
 
   `JavaScript` · `React` · `Vite` · `Python` · `HTML` · `CSS` · `SQLite` · `Turso` · `Git`
 
-  ### Em construção
-
-  **Controle Financeiro** — painel privado para organizar saldo, rendas, gastos, mensalidades, metas, cartão de crédito e projeções.
-
   ### Principios
 
   - Útil antes de chamativo.

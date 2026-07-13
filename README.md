@@ -15,8 +15,8 @@
 <br>
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nan733/nan733/main/assets/mission-control-v7-dark.svg">
-  <img width="100%" alt="Painel de foco e desenvolvimento de Renan Oliveira" src="https://raw.githubusercontent.com/nan733/nan733/main/assets/mission-control-v7-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nan733/nan733/main/assets/mission-control-v8-dark.svg">
+  <img width="100%" alt="Painel de foco e desenvolvimento de Renan Oliveira" src="https://raw.githubusercontent.com/nan733/nan733/main/assets/mission-control-v8-light.svg">
 </picture>
 
 <br>

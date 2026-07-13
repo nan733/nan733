@@ -252,11 +252,12 @@ def mission_svg(theme: dict[str, str]) -> str:
 
 <rect x="24" y="72" width="360" height="230" rx="8" fill="{theme['panel']}" stroke="{theme['grid']}"/>
 <text x="43" y="104" {title}>01 // FOCO</text>
-<text x="43" y="145" {head}>Desenvolvimento Full-Stack</text>
-<text x="43" y="184" {body}>aplicações web completas</text>
-<text x="43" y="216" {body}>React / Node.js / Python</text>
-<text x="43" y="248" {body}>APIs / dados / automação</text>
-<rect x="43" y="274" width="286" height="5" rx="2.5" fill="{theme['grid']}"/><rect x="43" y="274" width="196" height="5" rx="2.5" fill="{theme['green']}"><animate attributeName="width" values="150;196;182;196" dur="4s" repeatCount="indefinite"/></rect>
+<text x="43" y="140" {head}>Desenvolvimento</text>
+<text x="43" y="171" {head}>Full-Stack</text>
+<text x="43" y="207" {body}>aplicações web completas</text>
+<text x="43" y="237" {body}>React / Node.js / Python</text>
+<text x="43" y="267" {body}>APIs / dados / automação</text>
+<rect x="43" y="286" width="286" height="5" rx="2.5" fill="{theme['grid']}"/><rect x="43" y="286" width="196" height="5" rx="2.5" fill="{theme['green']}"><animate attributeName="width" values="150;196;182;196" dur="4s" repeatCount="indefinite"/></rect>
 
 <rect x="410" y="72" width="360" height="230" rx="8" fill="{theme['panel']}" stroke="{theme['grid']}"/>
 <text x="429" y="104" {title}>02 // APRENDIZADO</text>
@@ -283,7 +284,7 @@ def main() -> None:
             header_svg(theme), encoding="utf-8"
         )
         (ASSETS / f"profile-v7-{name}.svg").write_text(hero_svg(theme), encoding="utf-8")
-        (ASSETS / f"mission-control-v7-{name}.svg").write_text(
+        (ASSETS / f"mission-control-v8-{name}.svg").write_text(
             mission_svg(theme), encoding="utf-8"
         )
 

@@ -97,6 +97,56 @@ def ascii_tspans() -> str:
     return "\n".join(rows)
 
 
+def header_svg(theme: dict[str, str]) -> str:
+    mono = 'font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0"'
+    sans = 'font-family="Inter, Segoe UI, Arial, sans-serif" letter-spacing="0"'
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="190" viewBox="0 0 1180 190" role="img" aria-labelledby="title desc">
+<title id="title">Renan Oliveira, desenvolvedor Full-Stack em formação</title>
+<desc id="desc">Cabeçalho visual com o nome Renan Oliveira e sua área de atuação.</desc>
+<defs>
+  <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="{theme['cyan']}"><animate attributeName="stop-color" values="{theme['cyan']};{theme['blue']};{theme['cyan']}" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="0.52" stop-color="{theme['blue']}"><animate attributeName="stop-color" values="{theme['blue']};{theme['violet']};{theme['blue']}" dur="8s" repeatCount="indefinite"/></stop>
+    <stop offset="1" stop-color="{theme['violet']}"><animate attributeName="stop-color" values="{theme['violet']};{theme['green']};{theme['violet']}" dur="8s" repeatCount="indefinite"/></stop>
+  </linearGradient>
+  <linearGradient id="wave" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="{theme['cyan']}" stop-opacity="0.34"/>
+    <stop offset="0.5" stop-color="{theme['blue']}" stop-opacity="0.24"/>
+    <stop offset="1" stop-color="{theme['violet']}" stop-opacity="0.38"/>
+  </linearGradient>
+  <radialGradient id="glow" cx="50%" cy="18%" r="76%">
+    <stop offset="0" stop-color="{theme['cyan']}" stop-opacity="0.14"/>
+    <stop offset="0.5" stop-color="{theme['blue']}" stop-opacity="0.06"/>
+    <stop offset="1" stop-color="{theme['bg']}" stop-opacity="0"/>
+  </radialGradient>
+  <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+    <path d="M24 0H0V24" fill="none" stroke="{theme['grid']}" stroke-width="1" opacity="0.48"/>
+  </pattern>
+  <filter id="softGlow" x="-40%" y="-80%" width="180%" height="260%">
+    <feGaussianBlur stdDeviation="3" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+  <clipPath id="frameClip"><rect width="1180" height="190" rx="14"/></clipPath>
+</defs>
+<g clip-path="url(#frameClip)">
+  <rect width="1180" height="190" fill="{theme['bg']}"/>
+  <rect width="1180" height="190" fill="url(#grid)"/>
+  <rect width="1180" height="190" fill="url(#glow)"/>
+  <path d="M0 0H1180V126C1000 105 829 99 660 108C448 119 232 145 0 160Z" fill="url(#wave)"/>
+  <path d="M0 151C214 133 410 116 604 116C805 116 1000 140 1180 148V190H0Z" fill="{theme['panel']}" fill-opacity="0.78"/>
+  <path d="M0 151C214 133 410 116 604 116C805 116 1000 140 1180 148" fill="none" stroke="url(#accent)" stroke-width="2" opacity="0.72" filter="url(#softGlow)"/>
+</g>
+<rect x="3" y="3" width="1174" height="184" rx="12" fill="none" stroke="url(#accent)" stroke-width="2"/>
+<g text-anchor="middle">
+  <text x="590" y="76" {sans} font-size="46" font-weight="800" fill="{theme['ink']}">Renan <tspan fill="{theme['cyan']}">Oliveira</tspan></text>
+  <text x="590" y="111" {mono} font-size="17" font-weight="700" fill="{theme['ink']}">DESENVOLVEDOR FULL-STACK EM FORMAÇÃO</text>
+  <path d="M530 132H650" stroke="url(#accent)" stroke-width="3" stroke-linecap="round" filter="url(#softGlow)"/>
+  <circle cx="518" cy="132" r="3" fill="{theme['cyan']}"/>
+  <circle cx="662" cy="132" r="3" fill="{theme['violet']}"/>
+</g>
+</svg>'''
+
+
 def hero_svg(theme: dict[str, str]) -> str:
     mono = 'font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0"'
     tiny = f'{mono} font-size="10" fill="{theme["muted"]}"'
@@ -238,6 +288,9 @@ def mission_svg(theme: dict[str, str]) -> str:
 def main() -> None:
     ASSETS.mkdir(exist_ok=True)
     for name, theme in THEMES.items():
+        (ASSETS / f"profile-header-v1-{name}.svg").write_text(
+            header_svg(theme), encoding="utf-8"
+        )
         (ASSETS / f"profile-v3-{name}.svg").write_text(hero_svg(theme), encoding="utf-8")
         (ASSETS / f"mission-control-v3-{name}.svg").write_text(
             mission_svg(theme), encoding="utf-8"

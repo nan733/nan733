@@ -1,3 +1,5 @@
+<!-- GitHub profile README -->
+
 <p align="center">
   <img src="./assets/profile-terminal.svg" alt="Terminal style profile banner for nan733" width="100%" />
 </p>

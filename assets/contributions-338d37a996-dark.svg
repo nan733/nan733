@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1180" height="390" viewBox="0 0 1180 390" role="img" aria-labelledby="title desc">
 <title id="title">Estatísticas de contribuições de nan733</title>
-<desc id="desc">157 contribuições, sequência atual de 12 dias e maior sequência de 12 dias.</desc>
+<desc id="desc">157 contribuições, sequência atual de 0 dias e maior sequência de 12 dias.</desc>
 <defs>
   <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#20B978"/><stop offset="0.52" stop-color="#13734D"/><stop offset="1" stop-color="#2E7D57"/></linearGradient>
   <pattern id="grid" width="22" height="22" patternUnits="userSpaceOnUse"><path d="M22 0H0V22" fill="none" stroke="#0C291B" opacity="0.42"/></pattern>
@@ -26,12 +26,12 @@
   <path d="M105 312H321" stroke="#13734D" stroke-width="2" opacity="0.55"/>
 
   <circle cx="590" cy="178" r="76" fill="#06150E" stroke="#0C291B" stroke-width="12"/>
-  <circle cx="590" cy="178" r="76" fill="none" stroke="url(#accent)" stroke-width="12" stroke-linecap="round" stroke-dasharray="477.5 477.5" transform="rotate(-90 590 178)" filter="url(#glow)"/>
+  <circle cx="590" cy="178" r="76" fill="none" stroke="url(#accent)" stroke-width="12" stroke-linecap="round" stroke-dasharray="0.0 477.5" transform="rotate(-90 590 178)" filter="url(#glow)"/>
   <path d="M590 63C590 63 607 78 607 91C607 101 600 109 590 109C580 109 573 101 573 92C573 82 579 75 584 69C584 76 587 80 591 82C597 75 596 69 590 63Z" fill="#030C08" stroke="#20B978" stroke-width="3.5" stroke-linejoin="round" filter="url(#glow)"/>
   <path d="M590 82C597 88 598 94 594 99C592 103 586 103 584 99C582 94 586 88 590 82Z" fill="#20B978"><animate attributeName="opacity" values="0.55;1;0.55" dur="1.8s" repeatCount="indefinite"/></path>
-  <text x="590" y="201" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="68" font-weight="800" fill="#DDEBE3">12</text>
+  <text x="590" y="201" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="68" font-weight="800" fill="#DDEBE3">0</text>
   <text x="590" y="293" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="18" font-weight="800" fill="#20B978">SEQUÊNCIA ATUAL</text>
-  <text x="590" y="325" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="16" font-weight="650" fill="#728D7E">08 - 19 JUL 2026</text>
+  <text x="590" y="325" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="16" font-weight="650" fill="#728D7E">SEM SEQUÊNCIA ATIVA</text>
 
   <text x="967" y="112" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="18" font-weight="800" fill="#20B978">RECORDE</text>
   <text x="967" y="198" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" letter-spacing="0" font-size="82" font-weight="800" fill="#2E7D57">12</text>

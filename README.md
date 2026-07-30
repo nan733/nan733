@@ -23,7 +23,7 @@
 
 <!-- contribution-stats:start -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nan733/nan733/main/assets/contributions-5b4568bc0a-dark.svg">
-  <img width="100%" alt="Total de contribuições e sequências de Renan Oliveira" src="https://raw.githubusercontent.com/nan733/nan733/main/assets/contributions-5b4568bc0a-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/nan733/nan733/main/assets/contributions-3226cb0e4b-dark.svg">
+  <img width="100%" alt="Total de contribuições e sequências de Renan Oliveira" src="https://raw.githubusercontent.com/nan733/nan733/main/assets/contributions-3226cb0e4b-light.svg">
 </picture>
 <!-- contribution-stats:end -->

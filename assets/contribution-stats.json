@@ -4,9 +4,9 @@
   "updated_on": "2026-10-31",
   "total": 639,
   "current": {
-    "count": 1,
-    "start": "2026-10-30",
-    "end": "2026-10-30"
+    "count": 0,
+    "start": null,
+    "end": null
   },
   "longest": {
     "count": 14,
